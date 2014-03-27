@@ -116,9 +116,11 @@
 
 - (void)didFetchFailForEntity:(NSString *)entity error:(NSError *)error
 {
-    if ([entity isEqualToString:[CourseStep name]]) {
-        
-    }
+    [[[UIAlertView alloc] initWithTitle:@"Error"
+                                message:[NSString stringWithFormat:@"Couldn't fetch objects for Entity: %@", entity]
+                              delegate:nil
+                     cancelButtonTitle:@"OK"
+                     otherButtonTitles:nil] show];
 }
 
 #pragma mark - UITableView
