@@ -2,7 +2,7 @@
 //  CourseStep.m
 //  LearningAppHome
 //
-//  Created by Eric Velazquez on 3/23/14.
+//  Created by Eric Velazquez on 3/26/14.
 //
 //
 
@@ -16,9 +16,11 @@
 
 @dynamic identifier;
 @dynamic imageName;
-@dynamic name;
+@dynamic title;
 @dynamic numberOfItems;
 @dynamic numberOfSentences;
+@dynamic descriptionText;
+@dynamic language;
 @dynamic course;
 @dynamic courseStepProgresses;
 @dynamic items;

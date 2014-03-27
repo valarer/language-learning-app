@@ -7,25 +7,27 @@
         <relationship name="steps" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CourseStep" inverseName="course" inverseEntity="CourseStep" syncable="YES"/>
     </entity>
     <entity name="CourseStep" representedClassName="CourseStep" syncable="YES">
-        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descriptionText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="numberOfItems" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="numberOfSentences" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="steps" inverseEntity="Course" syncable="YES"/>
         <relationship name="courseStepProgresses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CourseStepProgress" inverseName="courseStep" inverseEntity="CourseStepProgress" syncable="YES"/>
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CourseStepItem" inverseName="courseStep" inverseEntity="CourseStepItem" syncable="YES"/>
     </entity>
     <entity name="CourseStepItem" representedClassName="CourseStepItem" syncable="YES">
-        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="meaning" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="typeOfWord" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="wordHiragana" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="wordKanji" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="partOfSpeech" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transliterations" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="courseStep" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CourseStep" inverseName="items" inverseEntity="CourseStep" syncable="YES"/>
         <relationship name="courseStepItemProgress" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CourseStepItemProgress" inverseName="courseStepItem" inverseEntity="CourseStepItemProgress" syncable="YES"/>
     </entity>
-    <entity name="CourseStepItemProgress" syncable="YES">
+    <entity name="CourseStepItemProgress" representedClassName="CourseStepItemProgress" syncable="YES">
         <attribute name="completed" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="errors" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="courseStepItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CourseStepItem" inverseName="courseStepItemProgress" inverseEntity="CourseStepItem" syncable="YES"/>
@@ -48,10 +50,10 @@
     </entity>
     <elements>
         <element name="Course" positionX="-63" positionY="-18" width="128" height="103"/>
-        <element name="CourseStep" positionX="-54" positionY="9" width="128" height="163"/>
+        <element name="CourseStep" positionX="-54" positionY="9" width="128" height="193"/>
         <element name="CourseStepItem" positionX="-36" positionY="36" width="128" height="148"/>
+        <element name="CourseStepItemProgress" positionX="-45" positionY="90" width="128" height="105"/>
         <element name="CourseStepProgress" positionX="-27" positionY="81" width="128" height="103"/>
         <element name="User" positionX="-18" positionY="90" width="128" height="150"/>
-        <element name="CourseStepItemProgress" positionX="-45" positionY="90" width="128" height="103"/>
     </elements>
 </model>

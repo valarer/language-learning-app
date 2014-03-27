@@ -11,12 +11,8 @@
 
 @interface EVCourseView : UIView <EVAnimatable>
 
-@property (strong, nonatomic) UILabel *courseStepName;
-@property (strong, nonatomic) UILabel *completedPercentage;
-@property (strong, nonatomic) UIImageView *backgroundImageView;
-
 - (instancetype)initWithOrigin:(CGPoint)origin;
 
-- (void)configureWithProgress:(CourseStepProgress *)progress;
+- (void)configureWithCourseStep:(CourseStep *)courseStep;
 
 @end

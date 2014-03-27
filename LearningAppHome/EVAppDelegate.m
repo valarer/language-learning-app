@@ -13,6 +13,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [EVModelManager sharedModelController];
     [[EVDataInitializer sharedDataInitializer] initiliazeData];
     
     return YES;

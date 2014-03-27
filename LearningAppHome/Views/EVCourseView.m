@@ -16,14 +16,10 @@
 #define LINE_HORIZONTAL_END_POINT 160.0f
 
 @interface EVCourseView ()
-{
-    CAShapeLayer *_startedWordsShapeLayer, *_completedWordsShapeLayer;
-    float _startedWordsStrokeEnd, _completedWordsStrokeEnd;
-}
 
-@property (strong, nonatomic) UIView *wordsProgressContainer;
-@property (strong, nonatomic) UILabel *startedWordsLabel;
-@property (strong, nonatomic) UILabel *completedWordsLabel;
+@property (strong, nonatomic) UILabel *courseStepName;
+@property (strong, nonatomic) UILabel *courseStepDescription;
+@property (strong, nonatomic) UIImageView *backgroundImageView;
 
 @end
 
@@ -67,80 +63,33 @@
     [EVMotionHelper parallaxMotionForView:_backgroundImageView movementOffset:PARALLAX_OFFSET];
     
     CGFloat margin = 10.0f;
-    _courseStepName = [[UILabel alloc] initWithFrame:CGRectMake(margin, 10, self.bounds.size.width - margin * 2, 20)];
+    _courseStepName = [[UILabel alloc] initWithFrame:CGRectMake(margin, 10,
+                                                                self.bounds.size.width - margin * 2, 20)];
     _courseStepName.numberOfLines = 0;
     _courseStepName.textColor = [UIColor whiteColor];
-    _courseStepName.font = FONT_TYPE(@"Thin", 20);
+    _courseStepName.font = FONT_TYPE(@"Light", 18);
     [self addSubview:_courseStepName];
     
-    _completedPercentage = [[UILabel alloc] initWithFrame:CGRectMake(self.bounds.size.width - margin - 140, 50, 0, 0)];
-    _completedPercentage.numberOfLines = 1;
-    _completedPercentage.textColor = [UIColor whiteColor];
-    _completedPercentage.font = FONT_TYPE(@"UltraLight", 70);
-    _completedPercentage.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
-    [self addSubview:_completedPercentage];
-    
-    // The CAShapeLayers creation with their paths
-    
-    _startedWordsShapeLayer = [CAShapeLayer layer];
-    _startedWordsShapeLayer.lineWidth = LINE_WIDTH;
-    _startedWordsShapeLayer.strokeEnd = 0.0f;
-    _startedWordsShapeLayer.strokeColor = COLOR_FROM_HEX_AND_ALPHA(0x6ba300, 0.4f).CGColor;
-    _startedWordsShapeLayer.fillColor = [UIColor clearColor].CGColor;
-    // LTR Path
-    UIBezierPath *startedWordsPath = [UIBezierPath bezierPath];
-    CGFloat originY = self.bounds.size.height - 50 - (LINE_WIDTH / 2) * 3;
-    CGPoint origin = CGPointMake(0, originY);
-    CGPoint end = CGPointMake(LINE_HORIZONTAL_END_POINT, originY);
-    [startedWordsPath moveToPoint:origin];
-    [startedWordsPath addLineToPoint:end];
-    _startedWordsShapeLayer.path = startedWordsPath.CGPath;
-    [self.layer addSublayer:_startedWordsShapeLayer];
-    
-    _completedWordsShapeLayer = [CAShapeLayer layer];
-    _completedWordsShapeLayer.lineWidth = LINE_WIDTH;
-    _completedWordsShapeLayer.strokeEnd = 0.0f;
-    _completedWordsShapeLayer.strokeColor = COLOR_FROM_HEX_AND_ALPHA(0xffa317, 0.4f).CGColor;
-    _completedWordsShapeLayer.fillColor = [UIColor clearColor].CGColor;
-    // Also a LTR path but below the previous one
-    UIBezierPath *finishedWordsPath = [UIBezierPath bezierPath];
-    originY = origin.y + LINE_WIDTH * 2;
-    [finishedWordsPath moveToPoint:CGPointMake(0, originY)];
-    [finishedWordsPath addLineToPoint:CGPointMake(LINE_HORIZONTAL_END_POINT, originY)];
-    _completedWordsShapeLayer.path = finishedWordsPath.CGPath;
-    [self.layer addSublayer:_completedWordsShapeLayer];
+    _courseStepDescription = [[UILabel alloc] initWithFrame:CGRectMake(margin,
+                                                                       _courseStepName.frame.origin.y + _courseStepName.frame.size.height,
+                                                                       self.bounds.size.width - margin * 2,
+                                                                       self.bounds.size.height - _courseStepName.frame.origin.y)];
+    _courseStepDescription.numberOfLines = 0;
+    _courseStepDescription.textColor = [UIColor whiteColor];
+    _courseStepDescription.font = FONT_TYPE(@"Thin", 13);
+    [self addSubview:_courseStepDescription];
 }
 
-- (void)configureWithProgress:(CourseStepProgress *)progress
+- (void)configureWithCourseStep:(CourseStep *)courseStep
 {
-    _courseStepName.text = progress.courseStep.name;
-    NSMutableAttributedString *message = [[NSMutableAttributedString alloc] initWithString:@"100%"];//progress.completedPercentageString];
-    [message addAttribute:NSFontAttributeName value:FONT_TYPE(@"UltraLight", 40) range:NSMakeRange([message length] - 1, 1)];
-    _completedPercentage.attributedText = message;
-    [_completedPercentage sizeToFit];
-    
-    _backgroundImageView.image = [[UIImage imageNamed:progress.courseStep.imageName] applyDarkEffect];
-    
-    _startedWordsStrokeEnd = (float)progress.completedItems / progress.courseStep.numberOfItems;
-    _completedWordsStrokeEnd = (float)progress.startedItems / progress.courseStep.numberOfItems;
+    _courseStepName.text = courseStep.title;
+    _courseStepDescription.text = courseStep.descriptionText;
+    _backgroundImageView.image = [[UIImage imageNamed:@"takayama.jpg"] applyDarkEffect];
 }
 
 - (void)animate
 {
-    CABasicAnimation *strokeEndAnimation = nil;
-    strokeEndAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    strokeEndAnimation.duration = 2;
-    strokeEndAnimation.fromValue = @(_startedWordsShapeLayer.strokeEnd);
-    strokeEndAnimation.toValue = @(1.f);
-    strokeEndAnimation.autoreverses = NO;
-    strokeEndAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
-    strokeEndAnimation.repeatCount = 0.f;
-    strokeEndAnimation.beginTime = CACurrentMediaTime() + 2;
-    strokeEndAnimation.fillMode = kCAFillModeForwards;
-    strokeEndAnimation.removedOnCompletion = NO;
-    [_startedWordsShapeLayer addAnimation:strokeEndAnimation forKey:@"strokeEndAnimation"];
-    strokeEndAnimation.toValue = @(_completedWordsStrokeEnd);
-    [_completedWordsShapeLayer addAnimation:strokeEndAnimation forKey:@"strokeEndAnimationFin"];
+
 }
 
 

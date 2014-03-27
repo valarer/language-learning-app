@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "EVCourseView.h"
+#import "EVModelHelperDelegate.h"
 
-@interface EVViewController : UIViewController
+@interface EVViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, EVModelHelperDelegate>
 
 @property (strong, nonatomic) EVCourseView *latestCourseView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;

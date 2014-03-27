@@ -12,4 +12,6 @@
 
 + (instancetype)entity;
 
++ (NSString *)name;
+
 @end

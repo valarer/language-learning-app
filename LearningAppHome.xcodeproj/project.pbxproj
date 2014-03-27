@@ -22,17 +22,33 @@
 		0702D8CB18DF8BBA00EBEB7C /* LearningAppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8C918DF8BBA00EBEB7C /* LearningAppModel.xcdatamodeld */; };
 		0702D8D218DF8C3000EBEB7C /* EVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8CE18DF8C2F00EBEB7C /* EVViewController.m */; };
 		0702D8D318DF8C3000EBEB7C /* EVCourseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8D118DF8C3000EBEB7C /* EVCourseView.m */; };
-		0702D8EA18DF8F5000EBEB7C /* EVModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8E918DF8F5000EBEB7C /* EVModelController.m */; };
-		0702D8ED18DF8FD800EBEB7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0702D8EB18DF8FD800EBEB7C /* Main.storyboard */; };
+		0702D8EA18DF8F5000EBEB7C /* EVModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8E918DF8F5000EBEB7C /* EVModelManager.m */; };
 		0702D8F418DF985E00EBEB7C /* CourseStepProgress+DataHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8F318DF985E00EBEB7C /* CourseStepProgress+DataHelpers.m */; };
-		0702D91E18DFB79500EBEB7C /* CourseStepItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D91D18DFB79500EBEB7C /* CourseStepItem.m */; };
 		0702D92A18DFC85900EBEB7C /* EVDataInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D92918DFC85900EBEB7C /* EVDataInitializer.m */; };
+		073D046D18E3D8250022B7C4 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 073D046418E3D72D0022B7C4 /* libRestKit.a */; };
+		073D046E18E3D8460022B7C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0702D8EB18DF8FD800EBEB7C /* Main.storyboard */; };
+		073D047018E3D87D0022B7C4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073D046F18E3D87D0022B7C4 /* CFNetwork.framework */; };
+		073D047218E3D88B0022B7C4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073D047118E3D88B0022B7C4 /* CoreData.framework */; };
+		073D047418E3D8A20022B7C4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073D047318E3D8A20022B7C4 /* MobileCoreServices.framework */; };
+		073D047618E3D8AA0022B7C4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073D047518E3D8AA0022B7C4 /* Security.framework */; };
+		073D047818E3D8B50022B7C4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073D047718E3D8B50022B7C4 /* SystemConfiguration.framework */; };
+		073D047B18E3DB3B0022B7C4 /* EVRestKitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D047A18E3DB3B0022B7C4 /* EVRestKitManager.m */; };
+		073D048E18E3DE3E0022B7C4 /* EVConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D048D18E3DE3E0022B7C4 /* EVConstants.m */; };
+		073D04A318E3EE4F0022B7C4 /* EVCourseStepHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04A218E3EE4F0022B7C4 /* EVCourseStepHelper.m */; };
+		073D04A718E3F47C0022B7C4 /* EVModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04A618E3F47C0022B7C4 /* EVModelHelper.m */; };
+		073D04AA18E3F5D40022B7C4 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04A918E3F5D40022B7C4 /* User.m */; };
+		073D04AD18E3F5D50022B7C4 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04AC18E3F5D50022B7C4 /* Course.m */; };
+		073D04B018E3F5D50022B7C4 /* CourseStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04AF18E3F5D50022B7C4 /* CourseStep.m */; };
+		073D04B618E3F5D60022B7C4 /* CourseStepItemProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04B518E3F5D60022B7C4 /* CourseStepItemProgress.m */; };
+		073D04B918E3F5D60022B7C4 /* CourseStepProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04B818E3F5D60022B7C4 /* CourseStepProgress.m */; };
+		073D04BC18E3F6770022B7C4 /* EVCourseStepItemHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04BB18E3F6770022B7C4 /* EVCourseStepItemHelper.m */; };
+		073D04BF18E40B5D0022B7C4 /* EVCourseStepHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04BE18E40B5D0022B7C4 /* EVCourseStepHomeView.m */; };
+		073D04C818E41DFC0022B7C4 /* EVCourseStepItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04C618E41DFC0022B7C4 /* EVCourseStepItemCell.m */; };
+		073D04C918E41DFC0022B7C4 /* EVCourseStepItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 073D04C718E41DFC0022B7C4 /* EVCourseStepItemCell.xib */; };
+		073D04D218E425A10022B7C4 /* CourseStepItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04D118E425A10022B7C4 /* CourseStepItem.m */; };
+		073D04D518E425ED0022B7C4 /* CourseStepItem+DataHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04D418E425ED0022B7C4 /* CourseStepItem+DataHelpers.m */; };
 		078178BA18E013BD00A46DA8 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 078178B918E013BD00A46DA8 /* UIImage+ImageEffects.m */; };
 		07AE234618E137CB00A9D1BA /* EVMotionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AE234518E137CB00A9D1BA /* EVMotionHelper.m */; };
-		07AE234B18E1631E00A9D1BA /* CourseStepProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AE234A18E1631E00A9D1BA /* CourseStepProgress.m */; };
-		07B0679E18DFE4F600E6CF80 /* CourseStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B0679D18DFE4F600E6CF80 /* CourseStep.m */; };
-		07B067A118DFE4F700E6CF80 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B067A018DFE4F700E6CF80 /* Course.m */; };
-		07B067A418DFE4F700E6CF80 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B067A318DFE4F700E6CF80 /* User.m */; };
 		07B067A918DFF74C00E6CF80 /* NSManagedObject+EVHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B067A818DFF74C00E6CF80 /* NSManagedObject+EVHelpers.m */; };
 		07B067AD18E00CE000E6CF80 /* takayama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07B067AC18E00CE000E6CF80 /* takayama.jpg */; };
 		07B067AF18E00E1200E6CF80 /* tokyo_train.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07B067AE18E00E1200E6CF80 /* tokyo_train.jpg */; };
@@ -45,6 +61,41 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0702D87C18DF824C00EBEB7C;
 			remoteInfo = LearningAppHome;
+		};
+		073D046318E3D72D0022B7C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 073D045C18E3D72C0022B7C4 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D1614564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+		073D046518E3D72D0022B7C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 073D045C18E3D72C0022B7C4 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D2614564E820060A5C5;
+			remoteInfo = RestKitTests;
+		};
+		073D046718E3D72D0022B7C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 073D045C18E3D72C0022B7C4 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E62145651060060A5C5;
+			remoteInfo = RestKitFramework;
+		};
+		073D046918E3D72D0022B7C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 073D045C18E3D72C0022B7C4 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E78145651060060A5C5;
+			remoteInfo = RestKitFrameworkTests;
+		};
+		073D046B18E3D8090022B7C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 073D045C18E3D72C0022B7C4 /* RestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 25160D1514564E810060A5C5;
+			remoteInfo = RestKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -70,29 +121,55 @@
 		0702D8CE18DF8C2F00EBEB7C /* EVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVViewController.m; sourceTree = "<group>"; };
 		0702D8D018DF8C3000EBEB7C /* EVCourseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVCourseView.h; sourceTree = "<group>"; };
 		0702D8D118DF8C3000EBEB7C /* EVCourseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVCourseView.m; sourceTree = "<group>"; };
-		0702D8E818DF8F5000EBEB7C /* EVModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVModelController.h; sourceTree = "<group>"; };
-		0702D8E918DF8F5000EBEB7C /* EVModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVModelController.m; sourceTree = "<group>"; };
+		0702D8E818DF8F5000EBEB7C /* EVModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVModelManager.h; sourceTree = "<group>"; };
+		0702D8E918DF8F5000EBEB7C /* EVModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVModelManager.m; sourceTree = "<group>"; };
 		0702D8EC18DF8FD800EBEB7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LearningAppHome/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		0702D8EE18DF904200EBEB7C /* EVMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVMacros.h; sourceTree = "<group>"; };
 		0702D8F218DF985E00EBEB7C /* CourseStepProgress+DataHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CourseStepProgress+DataHelpers.h"; sourceTree = "<group>"; };
 		0702D8F318DF985E00EBEB7C /* CourseStepProgress+DataHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CourseStepProgress+DataHelpers.m"; sourceTree = "<group>"; };
-		0702D91C18DFB79500EBEB7C /* CourseStepItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseStepItem.h; sourceTree = "<group>"; };
-		0702D91D18DFB79500EBEB7C /* CourseStepItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseStepItem.m; sourceTree = "<group>"; };
 		0702D92818DFC85900EBEB7C /* EVDataInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVDataInitializer.h; sourceTree = "<group>"; };
 		0702D92918DFC85900EBEB7C /* EVDataInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVDataInitializer.m; sourceTree = "<group>"; };
+		073D045C18E3D72C0022B7C4 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
+		073D046F18E3D87D0022B7C4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		073D047118E3D88B0022B7C4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		073D047318E3D8A20022B7C4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		073D047518E3D8AA0022B7C4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		073D047718E3D8B50022B7C4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		073D047918E3DB3B0022B7C4 /* EVRestKitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVRestKitManager.h; sourceTree = "<group>"; };
+		073D047A18E3DB3B0022B7C4 /* EVRestKitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVRestKitManager.m; sourceTree = "<group>"; };
+		073D048C18E3DE3E0022B7C4 /* EVConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVConstants.h; sourceTree = "<group>"; };
+		073D048D18E3DE3E0022B7C4 /* EVConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVConstants.m; sourceTree = "<group>"; };
+		073D04A118E3EE4F0022B7C4 /* EVCourseStepHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVCourseStepHelper.h; sourceTree = "<group>"; };
+		073D04A218E3EE4F0022B7C4 /* EVCourseStepHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVCourseStepHelper.m; sourceTree = "<group>"; };
+		073D04A418E3F16F0022B7C4 /* EVModelHelperDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVModelHelperDelegate.h; sourceTree = "<group>"; };
+		073D04A518E3F47C0022B7C4 /* EVModelHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVModelHelper.h; sourceTree = "<group>"; };
+		073D04A618E3F47C0022B7C4 /* EVModelHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVModelHelper.m; sourceTree = "<group>"; };
+		073D04A818E3F5D40022B7C4 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		073D04A918E3F5D40022B7C4 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		073D04AB18E3F5D50022B7C4 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		073D04AC18E3F5D50022B7C4 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		073D04AE18E3F5D50022B7C4 /* CourseStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseStep.h; sourceTree = "<group>"; };
+		073D04AF18E3F5D50022B7C4 /* CourseStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseStep.m; sourceTree = "<group>"; };
+		073D04B418E3F5D60022B7C4 /* CourseStepItemProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseStepItemProgress.h; sourceTree = "<group>"; };
+		073D04B518E3F5D60022B7C4 /* CourseStepItemProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseStepItemProgress.m; sourceTree = "<group>"; };
+		073D04B718E3F5D60022B7C4 /* CourseStepProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseStepProgress.h; sourceTree = "<group>"; };
+		073D04B818E3F5D60022B7C4 /* CourseStepProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseStepProgress.m; sourceTree = "<group>"; };
+		073D04BA18E3F6770022B7C4 /* EVCourseStepItemHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVCourseStepItemHelper.h; sourceTree = "<group>"; };
+		073D04BB18E3F6770022B7C4 /* EVCourseStepItemHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVCourseStepItemHelper.m; sourceTree = "<group>"; };
+		073D04BD18E40B5D0022B7C4 /* EVCourseStepHomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVCourseStepHomeView.h; sourceTree = "<group>"; };
+		073D04BE18E40B5D0022B7C4 /* EVCourseStepHomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVCourseStepHomeView.m; sourceTree = "<group>"; };
+		073D04C518E41DFC0022B7C4 /* EVCourseStepItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVCourseStepItemCell.h; sourceTree = "<group>"; };
+		073D04C618E41DFC0022B7C4 /* EVCourseStepItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVCourseStepItemCell.m; sourceTree = "<group>"; };
+		073D04C718E41DFC0022B7C4 /* EVCourseStepItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EVCourseStepItemCell.xib; sourceTree = "<group>"; };
+		073D04D018E425A10022B7C4 /* CourseStepItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseStepItem.h; sourceTree = "<group>"; };
+		073D04D118E425A10022B7C4 /* CourseStepItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseStepItem.m; sourceTree = "<group>"; };
+		073D04D318E425ED0022B7C4 /* CourseStepItem+DataHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CourseStepItem+DataHelpers.h"; sourceTree = "<group>"; };
+		073D04D418E425ED0022B7C4 /* CourseStepItem+DataHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CourseStepItem+DataHelpers.m"; sourceTree = "<group>"; };
 		078178B818E013BD00A46DA8 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		078178B918E013BD00A46DA8 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		07AE234418E137CB00A9D1BA /* EVMotionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVMotionHelper.h; sourceTree = "<group>"; };
 		07AE234518E137CB00A9D1BA /* EVMotionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVMotionHelper.m; sourceTree = "<group>"; };
 		07AE234818E1521000A9D1BA /* EVAnimatable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAnimatable.h; sourceTree = "<group>"; };
-		07AE234918E1631E00A9D1BA /* CourseStepProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseStepProgress.h; sourceTree = "<group>"; };
-		07AE234A18E1631E00A9D1BA /* CourseStepProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseStepProgress.m; sourceTree = "<group>"; };
-		07B0679C18DFE4F600E6CF80 /* CourseStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseStep.h; sourceTree = "<group>"; };
-		07B0679D18DFE4F600E6CF80 /* CourseStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseStep.m; sourceTree = "<group>"; };
-		07B0679F18DFE4F700E6CF80 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
-		07B067A018DFE4F700E6CF80 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
-		07B067A218DFE4F700E6CF80 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		07B067A318DFE4F700E6CF80 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		07B067A518DFEAA100E6CF80 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		07B067A718DFF74C00E6CF80 /* NSManagedObject+EVHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+EVHelpers.h"; sourceTree = "<group>"; };
 		07B067A818DFF74C00E6CF80 /* NSManagedObject+EVHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+EVHelpers.m"; sourceTree = "<group>"; };
@@ -105,6 +182,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				073D047818E3D8B50022B7C4 /* SystemConfiguration.framework in Frameworks */,
+				073D047618E3D8AA0022B7C4 /* Security.framework in Frameworks */,
+				073D047418E3D8A20022B7C4 /* MobileCoreServices.framework in Frameworks */,
+				073D047218E3D88B0022B7C4 /* CoreData.framework in Frameworks */,
+				073D047018E3D87D0022B7C4 /* CFNetwork.framework in Frameworks */,
+				073D046D18E3D8250022B7C4 /* libRestKit.a in Frameworks */,
 				0702D88318DF824C00EBEB7C /* CoreGraphics.framework in Frameworks */,
 				0702D88518DF824C00EBEB7C /* UIKit.framework in Frameworks */,
 				0702D88118DF824C00EBEB7C /* Foundation.framework in Frameworks */,
@@ -131,6 +214,7 @@
 				0702D8A518DF824C00EBEB7C /* LearningAppHomeTests */,
 				0702D87F18DF824C00EBEB7C /* Frameworks */,
 				0702D87E18DF824C00EBEB7C /* Products */,
+				073D045C18E3D72C0022B7C4 /* RestKit.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,6 +230,11 @@
 		0702D87F18DF824C00EBEB7C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				073D047718E3D8B50022B7C4 /* SystemConfiguration.framework */,
+				073D047518E3D8AA0022B7C4 /* Security.framework */,
+				073D047318E3D8A20022B7C4 /* MobileCoreServices.framework */,
+				073D047118E3D88B0022B7C4 /* CoreData.framework */,
+				073D046F18E3D87D0022B7C4 /* CFNetwork.framework */,
 				07B067A518DFEAA100E6CF80 /* AVFoundation.framework */,
 				0702D88018DF824C00EBEB7C /* Foundation.framework */,
 				0702D88218DF824C00EBEB7C /* CoreGraphics.framework */,
@@ -167,6 +256,7 @@
 				07AE234318E137BA00A9D1BA /* Helpers */,
 				07B067AA18E00CE000E6CF80 /* Resources */,
 				0702D88718DF824C00EBEB7C /* Supporting Files */,
+				073D048318E3DD770022B7C4 /* Libraries */,
 			);
 			path = LearningAppHome;
 			sourceTree = "<group>";
@@ -176,9 +266,11 @@
 			children = (
 				0702D88818DF824C00EBEB7C /* LearningAppHome-Info.plist */,
 				0702D88918DF824C00EBEB7C /* InfoPlist.strings */,
+				0702D88E18DF824C00EBEB7C /* LearningAppHome-Prefix.pch */,
 				0702D88C18DF824C00EBEB7C /* main.m */,
 				0702D8EE18DF904200EBEB7C /* EVMacros.h */,
-				0702D88E18DF824C00EBEB7C /* LearningAppHome-Prefix.pch */,
+				073D048C18E3DE3E0022B7C4 /* EVConstants.h */,
+				073D048D18E3DE3E0022B7C4 /* EVConstants.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -214,24 +306,10 @@
 			isa = PBXGroup;
 			children = (
 				0702D8C918DF8BBA00EBEB7C /* LearningAppModel.xcdatamodeld */,
-				0702D8E818DF8F5000EBEB7C /* EVModelController.h */,
-				0702D8E918DF8F5000EBEB7C /* EVModelController.m */,
-				0702D8F218DF985E00EBEB7C /* CourseStepProgress+DataHelpers.h */,
-				0702D8F318DF985E00EBEB7C /* CourseStepProgress+DataHelpers.m */,
-				0702D91C18DFB79500EBEB7C /* CourseStepItem.h */,
-				0702D91D18DFB79500EBEB7C /* CourseStepItem.m */,
-				0702D92818DFC85900EBEB7C /* EVDataInitializer.h */,
-				0702D92918DFC85900EBEB7C /* EVDataInitializer.m */,
-				07B0679C18DFE4F600E6CF80 /* CourseStep.h */,
-				07B0679D18DFE4F600E6CF80 /* CourseStep.m */,
-				07B0679F18DFE4F700E6CF80 /* Course.h */,
-				07B067A018DFE4F700E6CF80 /* Course.m */,
-				07B067A218DFE4F700E6CF80 /* User.h */,
-				07B067A318DFE4F700E6CF80 /* User.m */,
-				07B067A718DFF74C00E6CF80 /* NSManagedObject+EVHelpers.h */,
-				07B067A818DFF74C00E6CF80 /* NSManagedObject+EVHelpers.m */,
-				07AE234918E1631E00A9D1BA /* CourseStepProgress.h */,
-				07AE234A18E1631E00A9D1BA /* CourseStepProgress.m */,
+				073D049B18E3E4BE0022B7C4 /* Managers */,
+				073D049C18E3E4E80022B7C4 /* Entities */,
+				073D049A18E3E3F40022B7C4 /* ModelCategories */,
+				073D04A018E3ED940022B7C4 /* Helpers */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,8 +329,89 @@
 				0702D8EB18DF8FD800EBEB7C /* Main.storyboard */,
 				0702D8D018DF8C3000EBEB7C /* EVCourseView.h */,
 				0702D8D118DF8C3000EBEB7C /* EVCourseView.m */,
+				073D04BD18E40B5D0022B7C4 /* EVCourseStepHomeView.h */,
+				073D04BE18E40B5D0022B7C4 /* EVCourseStepHomeView.m */,
+				073D04C518E41DFC0022B7C4 /* EVCourseStepItemCell.h */,
+				073D04C618E41DFC0022B7C4 /* EVCourseStepItemCell.m */,
+				073D04C718E41DFC0022B7C4 /* EVCourseStepItemCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		073D045D18E3D72C0022B7C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				073D046418E3D72D0022B7C4 /* libRestKit.a */,
+				073D046618E3D72D0022B7C4 /* RestKitTests.octest */,
+				073D046818E3D72D0022B7C4 /* RestKit.framework */,
+				073D046A18E3D72D0022B7C4 /* RestKitFrameworkTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		073D048318E3DD770022B7C4 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		073D049A18E3E3F40022B7C4 /* ModelCategories */ = {
+			isa = PBXGroup;
+			children = (
+				07B067A718DFF74C00E6CF80 /* NSManagedObject+EVHelpers.h */,
+				07B067A818DFF74C00E6CF80 /* NSManagedObject+EVHelpers.m */,
+				0702D8F218DF985E00EBEB7C /* CourseStepProgress+DataHelpers.h */,
+				0702D8F318DF985E00EBEB7C /* CourseStepProgress+DataHelpers.m */,
+				073D04D318E425ED0022B7C4 /* CourseStepItem+DataHelpers.h */,
+				073D04D418E425ED0022B7C4 /* CourseStepItem+DataHelpers.m */,
+			);
+			name = ModelCategories;
+			sourceTree = "<group>";
+		};
+		073D049B18E3E4BE0022B7C4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0702D8E818DF8F5000EBEB7C /* EVModelManager.h */,
+				0702D8E918DF8F5000EBEB7C /* EVModelManager.m */,
+				0702D92818DFC85900EBEB7C /* EVDataInitializer.h */,
+				0702D92918DFC85900EBEB7C /* EVDataInitializer.m */,
+				073D047918E3DB3B0022B7C4 /* EVRestKitManager.h */,
+				073D047A18E3DB3B0022B7C4 /* EVRestKitManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		073D049C18E3E4E80022B7C4 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				073D04A818E3F5D40022B7C4 /* User.h */,
+				073D04A918E3F5D40022B7C4 /* User.m */,
+				073D04AB18E3F5D50022B7C4 /* Course.h */,
+				073D04AC18E3F5D50022B7C4 /* Course.m */,
+				073D04AE18E3F5D50022B7C4 /* CourseStep.h */,
+				073D04AF18E3F5D50022B7C4 /* CourseStep.m */,
+				073D04B718E3F5D60022B7C4 /* CourseStepProgress.h */,
+				073D04B818E3F5D60022B7C4 /* CourseStepProgress.m */,
+				073D04B418E3F5D60022B7C4 /* CourseStepItemProgress.h */,
+				073D04B518E3F5D60022B7C4 /* CourseStepItemProgress.m */,
+				073D04D018E425A10022B7C4 /* CourseStepItem.h */,
+				073D04D118E425A10022B7C4 /* CourseStepItem.m */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		073D04A018E3ED940022B7C4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				073D04A518E3F47C0022B7C4 /* EVModelHelper.h */,
+				073D04A618E3F47C0022B7C4 /* EVModelHelper.m */,
+				073D04A118E3EE4F0022B7C4 /* EVCourseStepHelper.h */,
+				073D04A218E3EE4F0022B7C4 /* EVCourseStepHelper.m */,
+				073D04BA18E3F6770022B7C4 /* EVCourseStepItemHelper.h */,
+				073D04BB18E3F6770022B7C4 /* EVCourseStepItemHelper.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		078178B718E013BD00A46DA8 /* Categories */ = {
@@ -277,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				07AE234818E1521000A9D1BA /* EVAnimatable.h */,
+				073D04A418E3F16F0022B7C4 /* EVModelHelperDelegate.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -313,6 +473,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				073D046C18E3D8090022B7C4 /* PBXTargetDependency */,
 			);
 			name = LearningAppHome;
 			productName = LearningAppHome;
@@ -362,6 +523,12 @@
 			mainGroup = 0702D87418DF824C00EBEB7C;
 			productRefGroup = 0702D87E18DF824C00EBEB7C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 073D045D18E3D72C0022B7C4 /* Products */;
+					ProjectRef = 073D045C18E3D72C0022B7C4 /* RestKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				0702D87C18DF824C00EBEB7C /* LearningAppHome */,
@@ -370,15 +537,47 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		073D046418E3D72D0022B7C4 /* libRestKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKit.a;
+			remoteRef = 073D046318E3D72D0022B7C4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		073D046618E3D72D0022B7C4 /* RestKitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitTests.octest;
+			remoteRef = 073D046518E3D72D0022B7C4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		073D046818E3D72D0022B7C4 /* RestKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RestKit.framework;
+			remoteRef = 073D046718E3D72D0022B7C4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		073D046A18E3D72D0022B7C4 /* RestKitFrameworkTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitFrameworkTests.octest;
+			remoteRef = 073D046918E3D72D0022B7C4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		0702D87B18DF824C00EBEB7C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				073D046E18E3D8460022B7C4 /* Main.storyboard in Resources */,
 				07B067AD18E00CE000E6CF80 /* takayama.jpg in Resources */,
-				0702D8ED18DF8FD800EBEB7C /* Main.storyboard in Resources */,
 				0702D89918DF824C00EBEB7C /* Images.xcassets in Resources */,
 				0702D88B18DF824C00EBEB7C /* InfoPlist.strings in Resources */,
+				073D04C918E41DFC0022B7C4 /* EVCourseStepItemCell.xib in Resources */,
 				07B067AF18E00E1200E6CF80 /* tokyo_train.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,21 +597,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07B067A418DFE4F700E6CF80 /* User.m in Sources */,
-				07AE234B18E1631E00A9D1BA /* CourseStepProgress.m in Sources */,
+				073D04AA18E3F5D40022B7C4 /* User.m in Sources */,
 				0702D92A18DFC85900EBEB7C /* EVDataInitializer.m in Sources */,
-				07B067A118DFE4F700E6CF80 /* Course.m in Sources */,
 				0702D8CB18DF8BBA00EBEB7C /* LearningAppModel.xcdatamodeld in Sources */,
+				073D04D518E425ED0022B7C4 /* CourseStepItem+DataHelpers.m in Sources */,
+				073D04C818E41DFC0022B7C4 /* EVCourseStepItemCell.m in Sources */,
+				073D04AD18E3F5D50022B7C4 /* Course.m in Sources */,
 				0702D88D18DF824C00EBEB7C /* main.m in Sources */,
+				073D04A718E3F47C0022B7C4 /* EVModelHelper.m in Sources */,
+				073D04D218E425A10022B7C4 /* CourseStepItem.m in Sources */,
 				0702D8F418DF985E00EBEB7C /* CourseStepProgress+DataHelpers.m in Sources */,
+				073D04A318E3EE4F0022B7C4 /* EVCourseStepHelper.m in Sources */,
 				0702D89118DF824C00EBEB7C /* EVAppDelegate.m in Sources */,
 				07B067A918DFF74C00E6CF80 /* NSManagedObject+EVHelpers.m in Sources */,
-				07B0679E18DFE4F600E6CF80 /* CourseStep.m in Sources */,
-				0702D91E18DFB79500EBEB7C /* CourseStepItem.m in Sources */,
 				078178BA18E013BD00A46DA8 /* UIImage+ImageEffects.m in Sources */,
+				073D048E18E3DE3E0022B7C4 /* EVConstants.m in Sources */,
 				07AE234618E137CB00A9D1BA /* EVMotionHelper.m in Sources */,
+				073D04B918E3F5D60022B7C4 /* CourseStepProgress.m in Sources */,
 				0702D8D318DF8C3000EBEB7C /* EVCourseView.m in Sources */,
-				0702D8EA18DF8F5000EBEB7C /* EVModelController.m in Sources */,
+				073D04BF18E40B5D0022B7C4 /* EVCourseStepHomeView.m in Sources */,
+				073D04BC18E3F6770022B7C4 /* EVCourseStepItemHelper.m in Sources */,
+				073D04B618E3F5D60022B7C4 /* CourseStepItemProgress.m in Sources */,
+				073D04B018E3F5D50022B7C4 /* CourseStep.m in Sources */,
+				0702D8EA18DF8F5000EBEB7C /* EVModelManager.m in Sources */,
+				073D047B18E3DB3B0022B7C4 /* EVRestKitManager.m in Sources */,
 				0702D8D218DF8C3000EBEB7C /* EVViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +640,11 @@
 			isa = PBXTargetDependency;
 			target = 0702D87C18DF824C00EBEB7C /* LearningAppHome */;
 			targetProxy = 0702D8A318DF824C00EBEB7C /* PBXContainerItemProxy */;
+		};
+		073D046C18E3D8090022B7C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RestKit;
+			targetProxy = 073D046B18E3D8090022B7C4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -540,8 +753,18 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LearningAppHome/LearningAppHome-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(BUILT_PRODUCTS_DIR)/../../Headers\"",
+				);
 				INFOPLIST_FILE = "LearningAppHome/LearningAppHome-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/LearningAppHome/Libraries/**";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -554,8 +777,18 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LearningAppHome/LearningAppHome-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(BUILT_PRODUCTS_DIR)/../../Headers\"",
+				);
 				INFOPLIST_FILE = "LearningAppHome/LearningAppHome-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/LearningAppHome/Libraries/**";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

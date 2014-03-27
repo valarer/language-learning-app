@@ -2,7 +2,7 @@
 //  User.m
 //  LearningAppHome
 //
-//  Created by Eric Velazquez on 3/23/14.
+//  Created by Eric Velazquez on 3/26/14.
 //
 //
 
@@ -13,10 +13,11 @@
 @implementation User
 
 @dynamic identifier;
+@dynamic imageName;
 @dynamic name;
 @dynamic totalCompletedItems;
 @dynamic totalStartedItems;
-@dynamic imageName;
+@dynamic courseStepItemProgresses;
 @dynamic courseStepProgresses;
 
 @end

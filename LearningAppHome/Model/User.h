@@ -2,7 +2,7 @@
 //  User.h
 //  LearningAppHome
 //
-//  Created by Eric Velazquez on 3/23/14.
+//  Created by Eric Velazquez on 3/26/14.
 //
 //
 
@@ -14,10 +14,11 @@
 @interface User : NSManagedObject
 
 @property (nonatomic, retain) NSString * identifier;
+@property (nonatomic, retain) NSString * imageName;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic) int32_t totalCompletedItems;
 @property (nonatomic) int32_t totalStartedItems;
-@property (nonatomic, retain) NSString * imageName;
+@property (nonatomic, retain) NSManagedObject *courseStepItemProgresses;
 @property (nonatomic, retain) NSSet *courseStepProgresses;
 @end
 

@@ -2,21 +2,23 @@
 //  CourseStepItem.m
 //  LearningAppHome
 //
-//  Created by Eric Velazquez on 3/23/14.
+//  Created by Eric Velazquez on 3/27/14.
 //
 //
 
 #import "CourseStepItem.h"
 #import "CourseStep.h"
+#import "CourseStepItemProgress.h"
 
 
 @implementation CourseStepItem
 
-@dynamic wordKanji;
-@dynamic meaning;
-@dynamic typeOfWord;
-@dynamic wordHiragana;
 @dynamic identifier;
+@dynamic meaning;
+@dynamic partOfSpeech;
+@dynamic transliterations;
+@dynamic text;
 @dynamic courseStep;
+@dynamic courseStepItemProgress;
 
 @end

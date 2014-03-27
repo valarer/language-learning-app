@@ -6,27 +6,34 @@
 //
 //
 
-#import "EVModelController.h"
+#import "EVModelManager.h"
+#import <CoreData/CoreData.h>
+#import "EVRestKitManager.h"
 
-@implementation EVModelController
-
-@synthesize managedObjectContext = __managedObjectContext;
-@synthesize managedObjectModel = __managedObjectModel;
-@synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+@implementation EVModelManager
 
 + (instancetype)sharedModelController {
-    static EVModelController *_sharedModelController = nil;
+    static EVModelManager *_sharedModelController = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedModelController = [EVModelController new];
+        _sharedModelController = [EVModelManager new];
     });
     
     return _sharedModelController;
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _restKitManager = [EVRestKitManager new];
+    }
+    return self;
+}
+
 - (id)entityForName:(NSString *)name
 {
-    return [NSEntityDescription insertNewObjectForEntityForName:name inManagedObjectContext:self.managedObjectContext];
+    return [NSEntityDescription insertNewObjectForEntityForName:name inManagedObjectContext:_restKitManager.managedObjectContext];
 }
 
 #pragma mark - Data fetchers
@@ -67,7 +74,7 @@
                   isEqualto:(id)value
                   orderedBy:(NSString *)property
 {
-    NSManagedObjectContext *context = [self managedObjectContext];
+    NSManagedObjectContext *context = _restKitManager.managedObjectContext;
     NSError *error;
     
     if (![context save:&error])
@@ -128,7 +135,7 @@ withPairColumnValueConditions:(NSDictionary *)columns
                       limit:(NSUInteger)limit
 {
     
-    NSManagedObjectContext *context = [self managedObjectContext];
+    NSManagedObjectContext *context = _restKitManager.managedObjectContext;
     NSError *error;
     
     if (![context save:&error])
@@ -173,7 +180,7 @@ withPairColumnValueConditions:(NSDictionary *)columns
 
 - (id)singleInstanceOf:(NSString *)entityName where:(NSString *)condition isEqualTo:(id)value
 {
-    NSManagedObjectContext *context = [self managedObjectContext];
+    NSManagedObjectContext *context = _restKitManager.managedObjectContext;
     NSError *error;
     
     if (![context save:&error])
@@ -220,7 +227,7 @@ withPairColumnValueConditions:(NSDictionary *)columns
 - (void)saveContext
 {
     NSError *error = nil;
-    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+    NSManagedObjectContext *managedObjectContext = _restKitManager.managedObjectContext;
     if (managedObjectContext != nil)
     {
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error])
@@ -238,7 +245,7 @@ withPairColumnValueConditions:(NSDictionary *)columns
 
 - (void)clearEntityData:(NSArray *)entities
 {
-    NSManagedObjectContext *context = self.managedObjectContext;
+    NSManagedObjectContext *context = _restKitManager.managedObjectContext;
     
     for (NSString *entity in entities) {
         
@@ -265,100 +272,8 @@ withPairColumnValueConditions:(NSDictionary *)columns
 
 - (void)deleteEntity:(NSManagedObject *)entity
 {
-    [self.managedObjectContext deleteObject:entity];
+    [_restKitManager.managedObjectContext deleteObject:entity];
     [self saveContext];
-}
-
-#pragma mark - Core Data stack
-
-/**
- Returns the managed object context for the application.
- If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
- */
-- (NSManagedObjectContext *)managedObjectContext
-{
-    if (__managedObjectContext != nil)
-    {
-        return __managedObjectContext;
-    }
-    
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-    if (coordinator != nil)
-    {
-        __managedObjectContext = [[NSManagedObjectContext alloc] init];
-        [__managedObjectContext setPersistentStoreCoordinator:coordinator];
-    }
-    return __managedObjectContext;
-}
-
-/**
- Returns the managed object model for the application.
- If the model doesn't already exist, it is created from the application's model.
- */
-- (NSManagedObjectModel *)managedObjectModel
-{
-    if (__managedObjectModel != nil)
-    {
-        return __managedObjectModel;
-    }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"LearningAppModel" withExtension:@"momd"];
-    __managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-    return __managedObjectModel;
-}
-
-/**
- Returns the persistent store coordinator for the application.
- If the coordinator doesn't already exist, it is created and the application's store added to it.
- */
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
-{
-    if (__persistentStoreCoordinator != nil)
-    {
-        return __persistentStoreCoordinator;
-    }
-    
-    NSURL *localStore = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"LearningApp.sqlite"];
-    
-    NSError *error = nil;
-    __persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    
-    if (![fileManager fileExistsAtPath:[localStore path]]) {
-        
-        NSURL *defaultStorePath = [[NSBundle mainBundle] URLForResource:@"LearningApp"
-                                                          withExtension:@"sqlite"];
-        
-        if (defaultStorePath)
-        {
-            NSError *error;
-            [fileManager copyItemAtURL:defaultStorePath toURL:localStore error:&error];
-        }
-    }
-    
-    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
-                             [NSNumber numberWithBool:YES],
-                             NSMigratePersistentStoresAutomaticallyOption,
-                             [NSNumber numberWithBool:YES],
-                             NSInferMappingModelAutomaticallyOption,
-                             nil];
-    if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:localStore options:options error:&error])
-    {
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-    
-    return __persistentStoreCoordinator;
-}
-
-#pragma mark - Application's Documents directory
-
-/**
- Returns the URL to the application's Documents directory.
- */
-- (NSURL *)applicationDocumentsDirectory
-{
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
 @end

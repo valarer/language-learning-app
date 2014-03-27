@@ -2,7 +2,7 @@
 //  CourseStep.h
 //  LearningAppHome
 //
-//  Created by Eric Velazquez on 3/23/14.
+//  Created by Eric Velazquez on 3/26/14.
 //
 //
 
@@ -13,11 +13,13 @@
 
 @interface CourseStep : NSManagedObject
 
-@property (nonatomic, retain) NSString * identifier;
+@property (nonatomic) int32_t identifier;
 @property (nonatomic, retain) NSString * imageName;
-@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * title;
 @property (nonatomic) int16_t numberOfItems;
 @property (nonatomic) int16_t numberOfSentences;
+@property (nonatomic, retain) NSString * descriptionText;
+@property (nonatomic, retain) NSString * language;
 @property (nonatomic, retain) Course *course;
 @property (nonatomic, retain) NSSet *courseStepProgresses;
 @property (nonatomic, retain) NSSet *items;

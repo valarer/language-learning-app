@@ -12,7 +12,12 @@
 
 + (instancetype)entity
 {
-    return [[EVModelController sharedModelController] entityForName:NSStringFromClass([self class])];
+    return [[EVModelManager sharedModelController] entityForName:NSStringFromClass([self class])];
+}
+
++ (NSString *)name
+{
+    return NSStringFromClass([self class]);
 }
 
 @end
