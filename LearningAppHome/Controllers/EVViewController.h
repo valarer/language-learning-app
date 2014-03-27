@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EVCourseView.h"
 
 @interface EVViewController : UIViewController
+
+@property (strong, nonatomic) EVCourseView *latestCourseView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end

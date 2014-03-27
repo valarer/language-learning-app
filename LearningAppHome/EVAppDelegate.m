@@ -7,12 +7,14 @@
 //
 
 #import "EVAppDelegate.h"
+#import "EVDataInitializer.h"
 
 @implementation EVAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [[EVDataInitializer sharedDataInitializer] initiliazeData];
+    
     return YES;
 }
 							

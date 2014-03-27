@@ -13,14 +13,29 @@
 		0702D88B18DF824C00EBEB7C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0702D88918DF824C00EBEB7C /* InfoPlist.strings */; };
 		0702D88D18DF824C00EBEB7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D88C18DF824C00EBEB7C /* main.m */; };
 		0702D89118DF824C00EBEB7C /* EVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D89018DF824C00EBEB7C /* EVAppDelegate.m */; };
-		0702D89418DF824C00EBEB7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0702D89218DF824C00EBEB7C /* Main.storyboard */; };
-		0702D89718DF824C00EBEB7C /* EVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D89618DF824C00EBEB7C /* EVViewController.m */; };
 		0702D89918DF824C00EBEB7C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0702D89818DF824C00EBEB7C /* Images.xcassets */; };
 		0702D8A018DF824C00EBEB7C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0702D89F18DF824C00EBEB7C /* XCTest.framework */; };
 		0702D8A118DF824C00EBEB7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0702D88018DF824C00EBEB7C /* Foundation.framework */; };
 		0702D8A218DF824C00EBEB7C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0702D88418DF824C00EBEB7C /* UIKit.framework */; };
 		0702D8AA18DF824C00EBEB7C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0702D8A818DF824C00EBEB7C /* InfoPlist.strings */; };
 		0702D8AC18DF824C00EBEB7C /* LearningAppHomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8AB18DF824C00EBEB7C /* LearningAppHomeTests.m */; };
+		0702D8CB18DF8BBA00EBEB7C /* LearningAppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8C918DF8BBA00EBEB7C /* LearningAppModel.xcdatamodeld */; };
+		0702D8D218DF8C3000EBEB7C /* EVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8CE18DF8C2F00EBEB7C /* EVViewController.m */; };
+		0702D8D318DF8C3000EBEB7C /* EVCourseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8D118DF8C3000EBEB7C /* EVCourseView.m */; };
+		0702D8EA18DF8F5000EBEB7C /* EVModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8E918DF8F5000EBEB7C /* EVModelController.m */; };
+		0702D8ED18DF8FD800EBEB7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0702D8EB18DF8FD800EBEB7C /* Main.storyboard */; };
+		0702D8F418DF985E00EBEB7C /* CourseStepProgress+DataHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8F318DF985E00EBEB7C /* CourseStepProgress+DataHelpers.m */; };
+		0702D91E18DFB79500EBEB7C /* CourseStepItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D91D18DFB79500EBEB7C /* CourseStepItem.m */; };
+		0702D92A18DFC85900EBEB7C /* EVDataInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D92918DFC85900EBEB7C /* EVDataInitializer.m */; };
+		078178BA18E013BD00A46DA8 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 078178B918E013BD00A46DA8 /* UIImage+ImageEffects.m */; };
+		07AE234618E137CB00A9D1BA /* EVMotionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AE234518E137CB00A9D1BA /* EVMotionHelper.m */; };
+		07AE234B18E1631E00A9D1BA /* CourseStepProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AE234A18E1631E00A9D1BA /* CourseStepProgress.m */; };
+		07B0679E18DFE4F600E6CF80 /* CourseStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B0679D18DFE4F600E6CF80 /* CourseStep.m */; };
+		07B067A118DFE4F700E6CF80 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B067A018DFE4F700E6CF80 /* Course.m */; };
+		07B067A418DFE4F700E6CF80 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B067A318DFE4F700E6CF80 /* User.m */; };
+		07B067A918DFF74C00E6CF80 /* NSManagedObject+EVHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B067A818DFF74C00E6CF80 /* NSManagedObject+EVHelpers.m */; };
+		07B067AD18E00CE000E6CF80 /* takayama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07B067AC18E00CE000E6CF80 /* takayama.jpg */; };
+		07B067AF18E00E1200E6CF80 /* tokyo_train.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07B067AE18E00E1200E6CF80 /* tokyo_train.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,15 +59,45 @@
 		0702D88E18DF824C00EBEB7C /* LearningAppHome-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LearningAppHome-Prefix.pch"; sourceTree = "<group>"; };
 		0702D88F18DF824C00EBEB7C /* EVAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAppDelegate.h; sourceTree = "<group>"; };
 		0702D89018DF824C00EBEB7C /* EVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAppDelegate.m; sourceTree = "<group>"; };
-		0702D89318DF824C00EBEB7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0702D89518DF824C00EBEB7C /* EVViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVViewController.h; sourceTree = "<group>"; };
-		0702D89618DF824C00EBEB7C /* EVViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVViewController.m; sourceTree = "<group>"; };
-		0702D89818DF824C00EBEB7C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0702D89818DF824C00EBEB7C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		0702D89E18DF824C00EBEB7C /* LearningAppHomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningAppHomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0702D89F18DF824C00EBEB7C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0702D8A718DF824C00EBEB7C /* LearningAppHomeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LearningAppHomeTests-Info.plist"; sourceTree = "<group>"; };
 		0702D8A918DF824C00EBEB7C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0702D8AB18DF824C00EBEB7C /* LearningAppHomeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LearningAppHomeTests.m; sourceTree = "<group>"; };
+		0702D8CA18DF8BBA00EBEB7C /* LearningAppModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LearningAppModel.xcdatamodel; sourceTree = "<group>"; };
+		0702D8CD18DF8C2F00EBEB7C /* EVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVViewController.h; sourceTree = "<group>"; };
+		0702D8CE18DF8C2F00EBEB7C /* EVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVViewController.m; sourceTree = "<group>"; };
+		0702D8D018DF8C3000EBEB7C /* EVCourseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVCourseView.h; sourceTree = "<group>"; };
+		0702D8D118DF8C3000EBEB7C /* EVCourseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVCourseView.m; sourceTree = "<group>"; };
+		0702D8E818DF8F5000EBEB7C /* EVModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVModelController.h; sourceTree = "<group>"; };
+		0702D8E918DF8F5000EBEB7C /* EVModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVModelController.m; sourceTree = "<group>"; };
+		0702D8EC18DF8FD800EBEB7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LearningAppHome/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		0702D8EE18DF904200EBEB7C /* EVMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVMacros.h; sourceTree = "<group>"; };
+		0702D8F218DF985E00EBEB7C /* CourseStepProgress+DataHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CourseStepProgress+DataHelpers.h"; sourceTree = "<group>"; };
+		0702D8F318DF985E00EBEB7C /* CourseStepProgress+DataHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CourseStepProgress+DataHelpers.m"; sourceTree = "<group>"; };
+		0702D91C18DFB79500EBEB7C /* CourseStepItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseStepItem.h; sourceTree = "<group>"; };
+		0702D91D18DFB79500EBEB7C /* CourseStepItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseStepItem.m; sourceTree = "<group>"; };
+		0702D92818DFC85900EBEB7C /* EVDataInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVDataInitializer.h; sourceTree = "<group>"; };
+		0702D92918DFC85900EBEB7C /* EVDataInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVDataInitializer.m; sourceTree = "<group>"; };
+		078178B818E013BD00A46DA8 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		078178B918E013BD00A46DA8 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		07AE234418E137CB00A9D1BA /* EVMotionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVMotionHelper.h; sourceTree = "<group>"; };
+		07AE234518E137CB00A9D1BA /* EVMotionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVMotionHelper.m; sourceTree = "<group>"; };
+		07AE234818E1521000A9D1BA /* EVAnimatable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAnimatable.h; sourceTree = "<group>"; };
+		07AE234918E1631E00A9D1BA /* CourseStepProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseStepProgress.h; sourceTree = "<group>"; };
+		07AE234A18E1631E00A9D1BA /* CourseStepProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseStepProgress.m; sourceTree = "<group>"; };
+		07B0679C18DFE4F600E6CF80 /* CourseStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseStep.h; sourceTree = "<group>"; };
+		07B0679D18DFE4F600E6CF80 /* CourseStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseStep.m; sourceTree = "<group>"; };
+		07B0679F18DFE4F700E6CF80 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		07B067A018DFE4F700E6CF80 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		07B067A218DFE4F700E6CF80 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		07B067A318DFE4F700E6CF80 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		07B067A518DFEAA100E6CF80 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		07B067A718DFF74C00E6CF80 /* NSManagedObject+EVHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+EVHelpers.h"; sourceTree = "<group>"; };
+		07B067A818DFF74C00E6CF80 /* NSManagedObject+EVHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+EVHelpers.m"; sourceTree = "<group>"; };
+		07B067AC18E00CE000E6CF80 /* takayama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = takayama.jpg; sourceTree = "<group>"; };
+		07B067AE18E00E1200E6CF80 /* tokyo_train.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tokyo_train.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +146,7 @@
 		0702D87F18DF824C00EBEB7C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07B067A518DFEAA100E6CF80 /* AVFoundation.framework */,
 				0702D88018DF824C00EBEB7C /* Foundation.framework */,
 				0702D88218DF824C00EBEB7C /* CoreGraphics.framework */,
 				0702D88418DF824C00EBEB7C /* UIKit.framework */,
@@ -112,12 +158,14 @@
 		0702D88618DF824C00EBEB7C /* LearningAppHome */ = {
 			isa = PBXGroup;
 			children = (
-				0702D88F18DF824C00EBEB7C /* EVAppDelegate.h */,
-				0702D89018DF824C00EBEB7C /* EVAppDelegate.m */,
-				0702D89218DF824C00EBEB7C /* Main.storyboard */,
-				0702D89518DF824C00EBEB7C /* EVViewController.h */,
-				0702D89618DF824C00EBEB7C /* EVViewController.m */,
-				0702D89818DF824C00EBEB7C /* Images.xcassets */,
+				0702D8B618DF836F00EBEB7C /* AppDelegate */,
+				0702D8CF18DF8C2F00EBEB7C /* Views */,
+				0702D8C818DF8BBA00EBEB7C /* Model */,
+				0702D8CC18DF8C2F00EBEB7C /* Controllers */,
+				078178B718E013BD00A46DA8 /* Categories */,
+				07AE234718E151ED00A9D1BA /* Protocols */,
+				07AE234318E137BA00A9D1BA /* Helpers */,
+				07B067AA18E00CE000E6CF80 /* Resources */,
 				0702D88718DF824C00EBEB7C /* Supporting Files */,
 			);
 			path = LearningAppHome;
@@ -129,6 +177,7 @@
 				0702D88818DF824C00EBEB7C /* LearningAppHome-Info.plist */,
 				0702D88918DF824C00EBEB7C /* InfoPlist.strings */,
 				0702D88C18DF824C00EBEB7C /* main.m */,
+				0702D8EE18DF904200EBEB7C /* EVMacros.h */,
 				0702D88E18DF824C00EBEB7C /* LearningAppHome-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -150,6 +199,104 @@
 				0702D8A818DF824C00EBEB7C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0702D8B618DF836F00EBEB7C /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				0702D88F18DF824C00EBEB7C /* EVAppDelegate.h */,
+				0702D89018DF824C00EBEB7C /* EVAppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		0702D8C818DF8BBA00EBEB7C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0702D8C918DF8BBA00EBEB7C /* LearningAppModel.xcdatamodeld */,
+				0702D8E818DF8F5000EBEB7C /* EVModelController.h */,
+				0702D8E918DF8F5000EBEB7C /* EVModelController.m */,
+				0702D8F218DF985E00EBEB7C /* CourseStepProgress+DataHelpers.h */,
+				0702D8F318DF985E00EBEB7C /* CourseStepProgress+DataHelpers.m */,
+				0702D91C18DFB79500EBEB7C /* CourseStepItem.h */,
+				0702D91D18DFB79500EBEB7C /* CourseStepItem.m */,
+				0702D92818DFC85900EBEB7C /* EVDataInitializer.h */,
+				0702D92918DFC85900EBEB7C /* EVDataInitializer.m */,
+				07B0679C18DFE4F600E6CF80 /* CourseStep.h */,
+				07B0679D18DFE4F600E6CF80 /* CourseStep.m */,
+				07B0679F18DFE4F700E6CF80 /* Course.h */,
+				07B067A018DFE4F700E6CF80 /* Course.m */,
+				07B067A218DFE4F700E6CF80 /* User.h */,
+				07B067A318DFE4F700E6CF80 /* User.m */,
+				07B067A718DFF74C00E6CF80 /* NSManagedObject+EVHelpers.h */,
+				07B067A818DFF74C00E6CF80 /* NSManagedObject+EVHelpers.m */,
+				07AE234918E1631E00A9D1BA /* CourseStepProgress.h */,
+				07AE234A18E1631E00A9D1BA /* CourseStepProgress.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0702D8CC18DF8C2F00EBEB7C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0702D8CD18DF8C2F00EBEB7C /* EVViewController.h */,
+				0702D8CE18DF8C2F00EBEB7C /* EVViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0702D8CF18DF8C2F00EBEB7C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0702D8EB18DF8FD800EBEB7C /* Main.storyboard */,
+				0702D8D018DF8C3000EBEB7C /* EVCourseView.h */,
+				0702D8D118DF8C3000EBEB7C /* EVCourseView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		078178B718E013BD00A46DA8 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				078178B818E013BD00A46DA8 /* UIImage+ImageEffects.h */,
+				078178B918E013BD00A46DA8 /* UIImage+ImageEffects.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		07AE234318E137BA00A9D1BA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				07AE234418E137CB00A9D1BA /* EVMotionHelper.h */,
+				07AE234518E137CB00A9D1BA /* EVMotionHelper.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		07AE234718E151ED00A9D1BA /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				07AE234818E1521000A9D1BA /* EVAnimatable.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		07B067AA18E00CE000E6CF80 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0702D89818DF824C00EBEB7C /* Images.xcassets */,
+				07B067AB18E00CE000E6CF80 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		07B067AB18E00CE000E6CF80 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				07B067AE18E00E1200E6CF80 /* tokyo_train.jpg */,
+				07B067AC18E00CE000E6CF80 /* takayama.jpg */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,9 +375,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B067AD18E00CE000E6CF80 /* takayama.jpg in Resources */,
+				0702D8ED18DF8FD800EBEB7C /* Main.storyboard in Resources */,
 				0702D89918DF824C00EBEB7C /* Images.xcassets in Resources */,
 				0702D88B18DF824C00EBEB7C /* InfoPlist.strings in Resources */,
-				0702D89418DF824C00EBEB7C /* Main.storyboard in Resources */,
+				07B067AF18E00E1200E6CF80 /* tokyo_train.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,9 +398,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0702D89718DF824C00EBEB7C /* EVViewController.m in Sources */,
+				07B067A418DFE4F700E6CF80 /* User.m in Sources */,
+				07AE234B18E1631E00A9D1BA /* CourseStepProgress.m in Sources */,
+				0702D92A18DFC85900EBEB7C /* EVDataInitializer.m in Sources */,
+				07B067A118DFE4F700E6CF80 /* Course.m in Sources */,
+				0702D8CB18DF8BBA00EBEB7C /* LearningAppModel.xcdatamodeld in Sources */,
 				0702D88D18DF824C00EBEB7C /* main.m in Sources */,
+				0702D8F418DF985E00EBEB7C /* CourseStepProgress+DataHelpers.m in Sources */,
 				0702D89118DF824C00EBEB7C /* EVAppDelegate.m in Sources */,
+				07B067A918DFF74C00E6CF80 /* NSManagedObject+EVHelpers.m in Sources */,
+				07B0679E18DFE4F600E6CF80 /* CourseStep.m in Sources */,
+				0702D91E18DFB79500EBEB7C /* CourseStepItem.m in Sources */,
+				078178BA18E013BD00A46DA8 /* UIImage+ImageEffects.m in Sources */,
+				07AE234618E137CB00A9D1BA /* EVMotionHelper.m in Sources */,
+				0702D8D318DF8C3000EBEB7C /* EVCourseView.m in Sources */,
+				0702D8EA18DF8F5000EBEB7C /* EVModelController.m in Sources */,
+				0702D8D218DF8C3000EBEB7C /* EVViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,20 +444,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		0702D89218DF824C00EBEB7C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0702D89318DF824C00EBEB7C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0702D8A818DF824C00EBEB7C /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0702D8A918DF824C00EBEB7C /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0702D8EB18DF8FD800EBEB7C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0702D8EC18DF8FD800EBEB7C /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -379,6 +541,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LearningAppHome/LearningAppHome-Prefix.pch";
 				INFOPLIST_FILE = "LearningAppHome/LearningAppHome-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -392,6 +555,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LearningAppHome/LearningAppHome-Prefix.pch";
 				INFOPLIST_FILE = "LearningAppHome/LearningAppHome-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -456,6 +620,7 @@
 				0702D8B118DF824C00EBEB7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0702D8B218DF824C00EBEB7C /* Build configuration list for PBXNativeTarget "LearningAppHomeTests" */ = {
 			isa = XCConfigurationList;
@@ -464,8 +629,22 @@
 				0702D8B418DF824C00EBEB7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0702D8C918DF8BBA00EBEB7C /* LearningAppModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0702D8CA18DF8BBA00EBEB7C /* LearningAppModel.xcdatamodel */,
+			);
+			currentVersion = 0702D8CA18DF8BBA00EBEB7C /* LearningAppModel.xcdatamodel */;
+			path = LearningAppModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0702D87518DF824C00EBEB7C /* Project object */;
 }
