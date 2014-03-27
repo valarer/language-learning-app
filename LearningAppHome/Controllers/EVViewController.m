@@ -71,6 +71,7 @@
                                                                     };
     
     self.navigationController.navigationBar.translucent = YES;
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 }
 
 #pragma mark - Data

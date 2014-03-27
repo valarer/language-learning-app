@@ -31,12 +31,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CbJ-uR-wYb">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CbJ-uR-wYb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CbJ-uR-wYb" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="9y4-SP-5Ju"/>
+                            <constraint firstAttribute="trailing" secondItem="CbJ-uR-wYb" secondAttribute="trailing" id="AjT-iH-OVv"/>
+                            <constraint firstItem="CbJ-uR-wYb" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="DXw-BO-c30"/>
+                            <constraint firstAttribute="bottom" secondItem="CbJ-uR-wYb" secondAttribute="bottom" id="gOo-3g-w8D"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="Ta5-K1-z1w"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
