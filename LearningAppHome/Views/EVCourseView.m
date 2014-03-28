@@ -9,6 +9,7 @@
 #import "EVCourseView.h"
 #import "UIImage+ImageEffects.h"
 #import "EVMotionHelper.h"
+#import "NSString+HTMLHelpers.h"
 
 #define VIEW_HEIGHT 150.0f
 #define PARALLAX_OFFSET CGSizeMake(20, 10)
@@ -18,7 +19,7 @@
 @interface EVCourseView ()
 
 @property (strong, nonatomic) UILabel *courseStepName;
-@property (strong, nonatomic) UILabel *courseStepDescription;
+@property (strong, nonatomic) UITextView *courseStepDescriptionTextView;
 @property (strong, nonatomic) UIImageView *backgroundImageView;
 
 @end
@@ -70,20 +71,23 @@
     _courseStepName.font = FONT_TYPE(@"Light", 18);
     [self addSubview:_courseStepName];
     
-    _courseStepDescription = [[UILabel alloc] initWithFrame:CGRectMake(margin,
-                                                                       _courseStepName.frame.origin.y + _courseStepName.frame.size.height,
-                                                                       self.bounds.size.width - margin * 2,
-                                                                       self.bounds.size.height - _courseStepName.frame.origin.y)];
-    _courseStepDescription.numberOfLines = 0;
-    _courseStepDescription.textColor = [UIColor whiteColor];
-    _courseStepDescription.font = FONT_TYPE(@"Thin", 13);
-    [self addSubview:_courseStepDescription];
+    _courseStepDescriptionTextView = [[UITextView alloc] initWithFrame:CGRectMake(margin,
+                                                                                  _courseStepName.frame.origin.y + _courseStepName.frame.size.height,
+                                                                                  self.bounds.size.width - margin * 2,
+                                                                                  self.bounds.size.height - _courseStepName.frame.origin.y)];
+    _courseStepDescriptionTextView.textColor = [UIColor whiteColor];
+    _courseStepDescriptionTextView.font = FONT_TYPE(@"Thin", 13);
+    _courseStepDescriptionTextView.backgroundColor = [UIColor clearColor];
+    _courseStepDescriptionTextView.dataDetectorTypes = UIDataDetectorTypeLink;
+    _courseStepDescriptionTextView.selectable = YES;
+    _courseStepDescriptionTextView.editable = NO;
+    [self addSubview:_courseStepDescriptionTextView];
 }
 
 - (void)configureWithCourseStep:(CourseStep *)courseStep
 {
     _courseStepName.text = courseStep.title;
-    _courseStepDescription.text = courseStep.descriptionText;
+    _courseStepDescriptionTextView.text = [courseStep.descriptionText stripTags];
     _backgroundImageView.image = [[UIImage imageNamed:@"takayama.jpg"] applyDarkEffect];
 }
 

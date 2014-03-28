@@ -84,7 +84,8 @@
     [courseStepMapping addAttributeMappingsFromDictionary:@{
                                                         @"id": @"identifier",
                                                         @"title": @"title",
-                                                        @"description": @"descriptionText"
+                                                        @"description": @"descriptionText",
+                                                        @"language": @"language"
                                                         }];
     
     RKResponseDescriptor *courseStepDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:courseStepMapping
@@ -101,7 +102,8 @@
                                                                 @"cue.content.text": @"text",
                                                                 @"cue.related.part_of_speech": @"partOfSpeech",
                                                                 @"cue.related.transliterations": @"transliterations",
-                                                                @"response.content.text": @"meaning"
+                                                                @"response.content.text": @"meaning",
+                                                                @"cue.related.language": @"language"
                                                                 }];
     
     RKResponseDescriptor *courseStepItemDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:courseStepItemMapping

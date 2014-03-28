@@ -11,6 +11,7 @@
 #import "EVCourseStepHelper.h"
 #import "EVCourseStepItemHelper.h"
 #import "EVCourseStepItemCell.h"
+#import "MBProgressHUD.h"
 
 @interface EVViewController ()
 {
@@ -53,11 +54,11 @@
                                               style:UITableViewStylePlain];
     _tableView.dataSource = self;
     _tableView.delegate = self;
-    _tableView.rowHeight = 60;
+    _tableView.rowHeight = 70;
     _tableView.scrollEnabled = NO;
     [_scrollView addSubview:_tableView];
     
-    [_tableView registerNib:[UINib nibWithNibName:@"EVCourseStepItemCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+    [_tableView registerClass:[EVCourseStepItemCell class] forCellReuseIdentifier:@"Cell"];
 }
 
 - (void)applyAppearance
@@ -88,10 +89,22 @@
     }
     _courseItemHelper.delegate = self;
     
+    [self.loadingIndicator show:YES];
+    
+    self.networkOperationsCounter = 2;
+    
     // Fetch Japanese course step 1
     [_courseHelper fetchCourseStepWithId:566921];
-    // and its items
     [_courseItemHelper fetchItemsForCourseWithId:566921];
+
+    // Fetch English course
+//    [_courseHelper fetchCourseStepWithId:470265];
+//    [_courseItemHelper fetchItemsForCourseWithId:470265];
+
+    // Fetch Simplified Chinese course
+//    [_courseHelper fetchCourseStepWithId:695684];
+//    [_courseItemHelper fetchItemsForCourseWithId:695684];
+
 }
 
 #pragma mark ModelHelper delegate
@@ -102,6 +115,7 @@
         CourseStep *courseStep = (CourseStep *)object;
         [_latestCourseView configureWithCourseStep:courseStep];
     }
+    [self finishedNetworkOperation];
 }
 
 - (void)didFetchObjects:(NSArray *)objects forEntity:(NSString *)entity
@@ -113,6 +127,7 @@
         _scrollView.contentSize = CGSizeMake(_tableView.bounds.size.width, contentHeight);
         [_tableView reloadData];
     }
+    [self finishedNetworkOperation];
 }
 
 - (void)didFetchFailForEntity:(NSString *)entity error:(NSError *)error

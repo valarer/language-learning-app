@@ -44,10 +44,13 @@
 		073D04BC18E3F6770022B7C4 /* EVCourseStepItemHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04BB18E3F6770022B7C4 /* EVCourseStepItemHelper.m */; };
 		073D04BF18E40B5D0022B7C4 /* EVCourseStepHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04BE18E40B5D0022B7C4 /* EVCourseStepHomeView.m */; };
 		073D04C818E41DFC0022B7C4 /* EVCourseStepItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04C618E41DFC0022B7C4 /* EVCourseStepItemCell.m */; };
-		073D04C918E41DFC0022B7C4 /* EVCourseStepItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 073D04C718E41DFC0022B7C4 /* EVCourseStepItemCell.xib */; };
-		073D04D218E425A10022B7C4 /* CourseStepItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04D118E425A10022B7C4 /* CourseStepItem.m */; };
 		073D04D518E425ED0022B7C4 /* CourseStepItem+DataHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04D418E425ED0022B7C4 /* CourseStepItem+DataHelpers.m */; };
+		073D04DE18E514B40022B7C4 /* CourseStepItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04DD18E514B40022B7C4 /* CourseStepItem.m */; };
 		078178BA18E013BD00A46DA8 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 078178B918E013BD00A46DA8 /* UIImage+ImageEffects.m */; };
+		0789149518E53ADA00FE2FA5 /* NSString+HTMLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 0789149418E53ADA00FE2FA5 /* NSString+HTMLHelpers.m */; };
+		0789149A18E544E700FE2FA5 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 0789149718E544E700FE2FA5 /* LICENSE */; };
+		0789149B18E544E700FE2FA5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0789149918E544E700FE2FA5 /* MBProgressHUD.m */; };
+		0789149E18E545D400FE2FA5 /* EVNetworkOperatorBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0789149D18E545D400FE2FA5 /* EVNetworkOperatorBaseViewController.m */; };
 		07AE234618E137CB00A9D1BA /* EVMotionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AE234518E137CB00A9D1BA /* EVMotionHelper.m */; };
 		07B067A918DFF74C00E6CF80 /* NSManagedObject+EVHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B067A818DFF74C00E6CF80 /* NSManagedObject+EVHelpers.m */; };
 		07B067AD18E00CE000E6CF80 /* takayama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07B067AC18E00CE000E6CF80 /* takayama.jpg */; };
@@ -160,13 +163,19 @@
 		073D04BE18E40B5D0022B7C4 /* EVCourseStepHomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVCourseStepHomeView.m; sourceTree = "<group>"; };
 		073D04C518E41DFC0022B7C4 /* EVCourseStepItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVCourseStepItemCell.h; sourceTree = "<group>"; };
 		073D04C618E41DFC0022B7C4 /* EVCourseStepItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVCourseStepItemCell.m; sourceTree = "<group>"; };
-		073D04C718E41DFC0022B7C4 /* EVCourseStepItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EVCourseStepItemCell.xib; sourceTree = "<group>"; };
-		073D04D018E425A10022B7C4 /* CourseStepItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseStepItem.h; sourceTree = "<group>"; };
-		073D04D118E425A10022B7C4 /* CourseStepItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseStepItem.m; sourceTree = "<group>"; };
 		073D04D318E425ED0022B7C4 /* CourseStepItem+DataHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CourseStepItem+DataHelpers.h"; sourceTree = "<group>"; };
 		073D04D418E425ED0022B7C4 /* CourseStepItem+DataHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CourseStepItem+DataHelpers.m"; sourceTree = "<group>"; };
+		073D04DC18E514B40022B7C4 /* CourseStepItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseStepItem.h; sourceTree = "<group>"; };
+		073D04DD18E514B40022B7C4 /* CourseStepItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseStepItem.m; sourceTree = "<group>"; };
 		078178B818E013BD00A46DA8 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		078178B918E013BD00A46DA8 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		0789149318E53ADA00FE2FA5 /* NSString+HTMLHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTMLHelpers.h"; sourceTree = "<group>"; };
+		0789149418E53ADA00FE2FA5 /* NSString+HTMLHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTMLHelpers.m"; sourceTree = "<group>"; };
+		0789149718E544E700FE2FA5 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		0789149818E544E700FE2FA5 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		0789149918E544E700FE2FA5 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		0789149C18E545D400FE2FA5 /* EVNetworkOperatorBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVNetworkOperatorBaseViewController.h; sourceTree = "<group>"; };
+		0789149D18E545D400FE2FA5 /* EVNetworkOperatorBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVNetworkOperatorBaseViewController.m; sourceTree = "<group>"; };
 		07AE234418E137CB00A9D1BA /* EVMotionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVMotionHelper.h; sourceTree = "<group>"; };
 		07AE234518E137CB00A9D1BA /* EVMotionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVMotionHelper.m; sourceTree = "<group>"; };
 		07AE234818E1521000A9D1BA /* EVAnimatable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAnimatable.h; sourceTree = "<group>"; };
@@ -319,6 +328,8 @@
 			children = (
 				0702D8CD18DF8C2F00EBEB7C /* EVViewController.h */,
 				0702D8CE18DF8C2F00EBEB7C /* EVViewController.m */,
+				0789149C18E545D400FE2FA5 /* EVNetworkOperatorBaseViewController.h */,
+				0789149D18E545D400FE2FA5 /* EVNetworkOperatorBaseViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -333,7 +344,6 @@
 				073D04BE18E40B5D0022B7C4 /* EVCourseStepHomeView.m */,
 				073D04C518E41DFC0022B7C4 /* EVCourseStepItemCell.h */,
 				073D04C618E41DFC0022B7C4 /* EVCourseStepItemCell.m */,
-				073D04C718E41DFC0022B7C4 /* EVCourseStepItemCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -352,6 +362,7 @@
 		073D048318E3DD770022B7C4 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				0789149618E544E700FE2FA5 /* HUD */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -395,8 +406,8 @@
 				073D04B818E3F5D60022B7C4 /* CourseStepProgress.m */,
 				073D04B418E3F5D60022B7C4 /* CourseStepItemProgress.h */,
 				073D04B518E3F5D60022B7C4 /* CourseStepItemProgress.m */,
-				073D04D018E425A10022B7C4 /* CourseStepItem.h */,
-				073D04D118E425A10022B7C4 /* CourseStepItem.m */,
+				073D04DC18E514B40022B7C4 /* CourseStepItem.h */,
+				073D04DD18E514B40022B7C4 /* CourseStepItem.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -419,8 +430,20 @@
 			children = (
 				078178B818E013BD00A46DA8 /* UIImage+ImageEffects.h */,
 				078178B918E013BD00A46DA8 /* UIImage+ImageEffects.m */,
+				0789149318E53ADA00FE2FA5 /* NSString+HTMLHelpers.h */,
+				0789149418E53ADA00FE2FA5 /* NSString+HTMLHelpers.m */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		0789149618E544E700FE2FA5 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				0789149718E544E700FE2FA5 /* LICENSE */,
+				0789149818E544E700FE2FA5 /* MBProgressHUD.h */,
+				0789149918E544E700FE2FA5 /* MBProgressHUD.m */,
+			);
+			path = HUD;
 			sourceTree = "<group>";
 		};
 		07AE234318E137BA00A9D1BA /* Helpers */ = {
@@ -573,11 +596,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0789149A18E544E700FE2FA5 /* LICENSE in Resources */,
 				073D046E18E3D8460022B7C4 /* Main.storyboard in Resources */,
 				07B067AD18E00CE000E6CF80 /* takayama.jpg in Resources */,
 				0702D89918DF824C00EBEB7C /* Images.xcassets in Resources */,
 				0702D88B18DF824C00EBEB7C /* InfoPlist.strings in Resources */,
-				073D04C918E41DFC0022B7C4 /* EVCourseStepItemCell.xib in Resources */,
 				07B067AF18E00E1200E6CF80 /* tokyo_train.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -604,11 +627,14 @@
 				073D04C818E41DFC0022B7C4 /* EVCourseStepItemCell.m in Sources */,
 				073D04AD18E3F5D50022B7C4 /* Course.m in Sources */,
 				0702D88D18DF824C00EBEB7C /* main.m in Sources */,
+				0789149E18E545D400FE2FA5 /* EVNetworkOperatorBaseViewController.m in Sources */,
+				073D04DE18E514B40022B7C4 /* CourseStepItem.m in Sources */,
 				073D04A718E3F47C0022B7C4 /* EVModelHelper.m in Sources */,
-				073D04D218E425A10022B7C4 /* CourseStepItem.m in Sources */,
 				0702D8F418DF985E00EBEB7C /* CourseStepProgress+DataHelpers.m in Sources */,
 				073D04A318E3EE4F0022B7C4 /* EVCourseStepHelper.m in Sources */,
 				0702D89118DF824C00EBEB7C /* EVAppDelegate.m in Sources */,
+				0789149518E53ADA00FE2FA5 /* NSString+HTMLHelpers.m in Sources */,
+				0789149B18E544E700FE2FA5 /* MBProgressHUD.m in Sources */,
 				07B067A918DFF74C00E6CF80 /* NSManagedObject+EVHelpers.m in Sources */,
 				078178BA18E013BD00A46DA8 /* UIImage+ImageEffects.m in Sources */,
 				073D048E18E3DE3E0022B7C4 /* EVConstants.m in Sources */,

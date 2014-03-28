@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSString * partOfSpeech;
 @property (nonatomic, retain) NSData * transliterations;
 @property (nonatomic, retain) NSString * text;
+@property (nonatomic, retain) NSString * language;
 @property (nonatomic, retain) CourseStep *courseStep;
 @property (nonatomic, retain) NSSet *courseStepItemProgress;
 @end

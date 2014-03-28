@@ -10,33 +10,79 @@
 
 @interface EVCourseStepItemCell ()
 
-@property (weak, nonatomic) IBOutlet UILabel *kanjiLabel;
-@property (weak, nonatomic) IBOutlet UILabel *transliterationLabel;
-@property (weak, nonatomic) IBOutlet UILabel *meaningLabel;
-@property (weak, nonatomic) IBOutlet UILabel *partOfSpeechLabel;
+@property (strong, nonatomic) UILabel *wordLabel;
+@property (strong, nonatomic) UILabel *transliterationLabel;
+@property (strong, nonatomic) UILabel *meaningLabel;
+@property (strong, nonatomic) UILabel *partOfSpeechLabel;
 
 @end
 
 @implementation EVCourseStepItemCell
 
-- (void)awakeFromNib
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self instantiateViews];
+    }
+    return self;
+}
+
+- (void)instantiateViews
+{
+    _wordLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, 76, 52)];
+    _wordLabel.font = FONT(20);
+    _wordLabel.textAlignment = NSTextAlignmentCenter;
+    [self addSubview:_wordLabel];
     
+    _transliterationLabel = [[UILabel alloc] initWithFrame:CGRectMake(104, 20, 138, 16)];
+    _transliterationLabel.font = FONT(14);
+    [self addSubview:_transliterationLabel];
+    
+    _meaningLabel = [[UILabel alloc] initWithFrame:CGRectMake(104, 28, 196, 34)];
+    _meaningLabel.font = FONT_TYPE(@"Thin", 14);
+    _meaningLabel.numberOfLines = 0;
+    _meaningLabel.textColor = [UIColor lightGrayColor];
+    _meaningLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    [self addSubview:_meaningLabel];
+    
+    _partOfSpeechLabel = [[UILabel alloc] initWithFrame:CGRectMake(215, 3, 85, 21)];
+    _partOfSpeechLabel.font = FONT_TYPE(@"Light", 12);
+    _partOfSpeechLabel.textAlignment = NSTextAlignmentRight;
+    [self addSubview:_partOfSpeechLabel];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
+#pragma mark - Data configuration
 
 - (void)configureWithModel:(CourseStepItem *)courseStepItem
 {
-    _kanjiLabel.text = courseStepItem.text;
-    _transliterationLabel.text = courseStepItem.hiraganaWord;
+    _wordLabel.text = courseStepItem.text;
     _meaningLabel.text = courseStepItem.meaning;
     _partOfSpeechLabel.text = courseStepItem.partOfSpeech;
+    
+    if ([_partOfSpeechLabel.text isEqualToString:@"None"]) {
+        _partOfSpeechLabel.text = @"";
+    }
+    
+    if ([courseStepItem.language isEqualToString:LANG_JA]) {
+        _transliterationLabel.text = courseStepItem.hiraganaWord;
+        if ([_transliterationLabel.text isEqualToString:_wordLabel.text]) {
+            [self centerContentVertically];
+        }
+    }
+    else if ([courseStepItem.language isEqualToString:LANG_EN]) {
+        _wordLabel.font = FONT(15);
+        [self centerContentVertically];
+    }
+    else {
+        [self centerContentVertically];
+    }
+}
+
+- (void)centerContentVertically
+{
+    _transliterationLabel.hidden = YES;
+    _meaningLabel.center = CGPointMake(_meaningLabel.center.x, _meaningLabel.center.y - 10);
 }
 
 @end

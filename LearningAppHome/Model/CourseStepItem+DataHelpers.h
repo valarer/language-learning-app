@@ -12,4 +12,6 @@
 
 @property (strong, nonatomic, readonly) NSString *hiraganaWord;
 
+- (NSString *)transliterationForKey:(NSString *)key;
+
 @end

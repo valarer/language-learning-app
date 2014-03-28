@@ -20,6 +20,7 @@
     </entity>
     <entity name="CourseStepItem" representedClassName="CourseStepItem" syncable="YES">
         <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="meaning" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="partOfSpeech" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
@@ -51,7 +52,7 @@
     <elements>
         <element name="Course" positionX="-63" positionY="-18" width="128" height="103"/>
         <element name="CourseStep" positionX="-54" positionY="9" width="128" height="193"/>
-        <element name="CourseStepItem" positionX="-36" positionY="36" width="128" height="148"/>
+        <element name="CourseStepItem" positionX="-36" positionY="36" width="128" height="163"/>
         <element name="CourseStepItemProgress" positionX="-45" positionY="90" width="128" height="105"/>
         <element name="CourseStepProgress" positionX="-27" positionY="81" width="128" height="103"/>
         <element name="User" positionX="-18" positionY="90" width="128" height="150"/>

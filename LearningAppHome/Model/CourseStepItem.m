@@ -18,6 +18,7 @@
 @dynamic partOfSpeech;
 @dynamic transliterations;
 @dynamic text;
+@dynamic language;
 @dynamic courseStep;
 @dynamic courseStepItemProgress;
 
