@@ -11,8 +11,7 @@
 
 @implementation EVAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [EVModelManager sharedModelController];
     [[EVDataInitializer sharedDataInitializer] initiliazeData];
     

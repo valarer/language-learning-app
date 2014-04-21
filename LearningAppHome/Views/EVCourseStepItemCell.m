@@ -58,9 +58,11 @@
 {
     _wordLabel.text = courseStepItem.text;
     _meaningLabel.text = courseStepItem.meaning;
-    _partOfSpeechLabel.text = courseStepItem.partOfSpeech;
     
-    if ([_partOfSpeechLabel.text isEqualToString:@"None"]) {
+    // Better to check the original object then the text assigned to a label
+    if (![courseStepItem.partOfSpeech isEqualToString:@"None"]) {
+        _partOfSpeechLabel.text = courseStepItem.partOfSpeech;
+    }else {
         _partOfSpeechLabel.text = @"";
     }
     
@@ -79,6 +81,8 @@
     }
 }
 
+// You are calling this in all cases except when _transliterationLabel.text != _wordLabel.text
+// Does it ever get reset? This table view cell will likely be reused. 
 - (void)centerContentVertically
 {
     _transliterationLabel.hidden = YES;

@@ -10,6 +10,8 @@
 
 @interface EVConstants : NSObject
 
+// Macros are easier than externalizing constants
+
 extern NSString * const SERVER_URL;
 extern NSString * const URL_ITEMS_FOR_GOAL;
 extern NSString * const URL_SINGLE_GOAL;

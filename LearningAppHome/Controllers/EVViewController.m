@@ -52,6 +52,8 @@
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0,
                                                                self.view.bounds.size.width, self.view.bounds.size.height)
                                               style:UITableViewStylePlain];
+    
+    // Why are you putting a non-scrolling table view into a scroll view? I would think this would not allow the table view to optimaize view usage.
     _tableView.dataSource = self;
     _tableView.delegate = self;
     _tableView.rowHeight = 70;
@@ -97,6 +99,7 @@
     [_courseHelper fetchCourseStepWithId:566921];
     [_courseItemHelper fetchItemsForCourseWithId:566921];
 
+    // If you comment out code, please add a note, otherwise remove.
     // Fetch English course
 //    [_courseHelper fetchCourseStepWithId:470265];
 //    [_courseItemHelper fetchItemsForCourseWithId:470265];
@@ -111,6 +114,7 @@
 
 - (void)didFetchObject:(id)object forEntity:(NSString *)entity
 {
+    // A better check would be on object class (i.e. [object isKindOfClass:[CourseStep class]]) but I understand this is how the model helper was designed.  
     if ([entity isEqualToString:[CourseStep name]]) {
         CourseStep *courseStep = (CourseStep *)object;
         [_latestCourseView configureWithCourseStep:courseStep];
@@ -123,6 +127,7 @@
     if ([entity isEqualToString:[CourseStepItem name]]) {
         _items = objects;
         CGFloat contentHeight = _tableView.rowHeight * [_items count] + _latestCourseView.bounds.size.height;
+        // Using CGRectMake is preferable to casting a self made struct to CGRect
         _tableView.frame = (CGRect){ _tableView.frame.origin, CGSizeMake(_tableView.bounds.size.width, contentHeight) };
         _scrollView.contentSize = CGSizeMake(_tableView.bounds.size.width, contentHeight);
         [_tableView reloadData];
@@ -147,8 +152,8 @@
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section
+// Method names should not wrap
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [_items count];
 }
@@ -158,6 +163,7 @@
 {
     EVCourseStepItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
+    // Even though the shorthand for accessing items in a NSArray objects are convenient, I would prefer if you used the objectAtIndex method because it makes the NSArray object appear to be id[] which it isn't.
     CourseStepItem *item = _items[indexPath.row];
     [cell configureWithModel:item];
     
