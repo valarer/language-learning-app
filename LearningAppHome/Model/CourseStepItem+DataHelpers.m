@@ -17,7 +17,7 @@
 
 - (NSString *)transliterationForKey:(NSString *)key
 {
-    NSString *word = @"";
+    // You should bind mappings to objects otherwise they become difficult to maintain 
     if (self.transliterations) {
         NSArray *transliterations = [NSKeyedUnarchiver unarchiveObjectWithData:self.transliterations];
         for (NSObject *transliterationItem in transliterations) {
@@ -26,7 +26,7 @@
             }
         }
     }
-    return word;
+    return @"";
 }
 
 @end

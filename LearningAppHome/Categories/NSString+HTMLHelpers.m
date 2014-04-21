@@ -11,6 +11,9 @@
 @implementation NSString (HTMLHelpers)
 
 
+// Here is a much simpler solution to read (and only one line!)
+// return [string stringByReplacingOccurrencesOfString:@"<.*?>" withString:@"" options:NSRegularExpressionSearch range:NSMakeRange(0, [string length])];
+
 /**
  * Taken from http://stackoverflow.com/a/6171866
  * Changed it to a category

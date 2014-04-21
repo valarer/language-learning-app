@@ -18,6 +18,7 @@
     [[RKObjectManager sharedManager] getObjectsAtPath:stringPath
                                            parameters:nil
                                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                              // I am not familiar with this pattern of casting self to a strong reference before calling a method on it. Why are you doing this exactly?
                                                   __strong __typeof__(weakSelf) strongSelf = weakSelf;
                                                   if ([strongSelf delegate] && [[strongSelf delegate] respondsToSelector:@selector(didFetchObject:forEntity:)])
                                                   {

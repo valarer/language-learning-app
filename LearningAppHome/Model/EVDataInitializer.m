@@ -20,6 +20,7 @@
     return _sharedDataInitializer;
 }
 
+// Do not leave commented code around. This is what git is for.
 - (void)initiliazeData
 {
 //    EVModelManager *modelController = [EVModelManager sharedModelController];

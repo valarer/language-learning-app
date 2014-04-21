@@ -125,6 +125,7 @@
     _completedWordsStrokeEnd = (float)progress.startedItems / progress.courseStep.numberOfItems;
 }
 
+// Private method not referenced in .m file
 - (void)animate
 {
     CABasicAnimation *strokeEndAnimation = nil;

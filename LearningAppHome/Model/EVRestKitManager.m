@@ -48,6 +48,9 @@
                                                                                    withConfiguration:nil
                                                                                              options:nil
                                                                                                error:&error];
+    
+    // Always check that error points to nothing after passing it into a function
+    
     NSAssert(persistentStore, @"Failed to add persistent store: %@", error);
     
     [managedObjectStore createManagedObjectContexts];
@@ -59,7 +62,6 @@
     objectManager.managedObjectStore = managedObjectStore;
     
     [RKObjectManager setSharedManager:objectManager];
-    
     
     [self createMappings];
     

@@ -16,7 +16,11 @@
 #define LINE_WIDTH 14.0f
 #define LINE_HORIZONTAL_END_POINT 160.0f
 
-@interface EVCourseView ()
+@interface EVCourseView () {
+    UILabel *courseStepName;
+    UITextView *courseStepDescriptionTextView;
+    UIImageView *backgroundImageView;
+}
 
 @property (strong, nonatomic) UILabel *courseStepName;
 @property (strong, nonatomic) UITextView *courseStepDescriptionTextView;
@@ -25,6 +29,10 @@
 @end
 
 @implementation EVCourseView
+
+@synthesize courseStepName;
+@synthesize courseStepDescriptionTextView;
+@synthesize backgroundImageView;
 
 - (instancetype)initWithOrigin:(CGPoint)origin
 {
@@ -37,7 +45,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self createSubviews];
+        [self initialize];
     }
     return self;
 }
@@ -46,54 +54,54 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        [self createSubviews];
+        [self initialize];
     }
     return self;
 }
 
-- (void)createSubviews
+- (void)initialize
 {
     self.layer.masksToBounds = YES;
-    _backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(-PARALLAX_OFFSET.width,
+    backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(-PARALLAX_OFFSET.width,
                                                                          -PARALLAX_OFFSET.height,
                                                                          self.bounds.size.width + PARALLAX_OFFSET.width * 2,
                                                                          self.bounds.size.height + PARALLAX_OFFSET.height * 2)];
-    _backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
-    [self addSubview:_backgroundImageView];
+    backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+    [self addSubview:backgroundImageView];
     
-    [EVMotionHelper parallaxMotionForView:_backgroundImageView movementOffset:PARALLAX_OFFSET];
+    [EVMotionHelper parallaxMotionForView:backgroundImageView movementOffset:PARALLAX_OFFSET];
     
-    CGFloat margin = 10.0f;
-    _courseStepName = [[UILabel alloc] initWithFrame:CGRectMake(margin, 10,
+    CGFloat margin = 10.0f; // Move to macro
+    courseStepName = [[UILabel alloc] initWithFrame:CGRectMake(margin, 10,
                                                                 self.bounds.size.width - margin * 2, 20)];
-    _courseStepName.numberOfLines = 0;
-    _courseStepName.textColor = [UIColor whiteColor];
-    _courseStepName.font = FONT_TYPE(@"Light", 18);
-    [self addSubview:_courseStepName];
+    courseStepName.numberOfLines = 0;
+    courseStepName.textColor = [UIColor whiteColor];
+    courseStepName.font = FONT_TYPE(@"Light", 18);
+    [self addSubview:courseStepName];
     
-    _courseStepDescriptionTextView = [[UITextView alloc] initWithFrame:CGRectMake(margin,
-                                                                                  _courseStepName.frame.origin.y + _courseStepName.frame.size.height,
+    courseStepDescriptionTextView = [[UITextView alloc] initWithFrame:CGRectMake(margin,
+                                                                                  courseStepName.frame.origin.y + courseStepName.frame.size.height,
                                                                                   self.bounds.size.width - margin * 2,
-                                                                                  self.bounds.size.height - _courseStepName.frame.origin.y)];
-    _courseStepDescriptionTextView.textColor = [UIColor whiteColor];
-    _courseStepDescriptionTextView.font = FONT_TYPE(@"Thin", 13);
-    _courseStepDescriptionTextView.backgroundColor = [UIColor clearColor];
-    _courseStepDescriptionTextView.dataDetectorTypes = UIDataDetectorTypeLink;
-    _courseStepDescriptionTextView.selectable = YES;
-    _courseStepDescriptionTextView.editable = NO;
-    [self addSubview:_courseStepDescriptionTextView];
+                                                                                  self.bounds.size.height - courseStepName.frame.origin.y)];
+    courseStepDescriptionTextView.textColor = [UIColor whiteColor];
+    courseStepDescriptionTextView.font = FONT_TYPE(@"Thin", 13);
+    courseStepDescriptionTextView.backgroundColor = [UIColor clearColor];
+    courseStepDescriptionTextView.dataDetectorTypes = UIDataDetectorTypeLink;
+    courseStepDescriptionTextView.selectable = YES;
+    courseStepDescriptionTextView.editable = NO;
+    [self addSubview:courseStepDescriptionTextView];
 }
 
 - (void)configureWithCourseStep:(CourseStep *)courseStep
 {
-    _courseStepName.text = courseStep.title;
-    _courseStepDescriptionTextView.text = [courseStep.descriptionText stripTags];
-    _backgroundImageView.image = [[UIImage imageNamed:@"takayama.jpg"] applyDarkEffect];
+    courseStepName.text = courseStep.title;
+    courseStepDescriptionTextView.text = [courseStep.descriptionText stripTags];
+    backgroundImageView.image = [[UIImage imageNamed:@"takayama.jpg"] applyDarkEffect];
 }
 
 - (void)animate
 {
-
+    // Delete me
 }
 
 
