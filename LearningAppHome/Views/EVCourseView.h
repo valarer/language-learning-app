@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "EVAnimatable.h"
 
-@interface EVCourseView : UIView <EVAnimatable>
+@interface EVCourseView : UIView
+
++ (CGFloat)defaultHeight;
 
 - (instancetype)initWithOrigin:(CGPoint)origin;
-
 - (void)configureWithCourseStep:(CourseStep *)courseStep;
 
 @end

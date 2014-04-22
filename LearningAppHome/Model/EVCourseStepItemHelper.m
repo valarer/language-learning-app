@@ -10,8 +10,7 @@
 
 @implementation EVCourseStepItemHelper
 
-- (void)fetchItemsForCourseWithId:(int)identifier
-{
+- (void)fetchItemsForCourseWithId:(int)identifier {
     NSString *stringPath = [NSString stringWithFormat:URL_ITEMS_FOR_GOAL, identifier];
     
     __weak __typeof__(self) weakSelf = self;
@@ -19,7 +18,7 @@
                                            parameters:nil
                                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                                   __strong __typeof__(weakSelf) strongSelf = weakSelf;
-                                                  if ([strongSelf delegate] && [[strongSelf delegate] respondsToSelector:@selector(didFetchObject:forEntity:)])
+                                                  if ([strongSelf.delegate respondsToSelector:@selector(didFetchObject:forEntity:)])
                                                   {
                                                       [strongSelf.delegate didFetchObjects:mappingResult.array forEntity:[CourseStepItem name]];
                                                   }

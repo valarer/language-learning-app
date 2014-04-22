@@ -11,8 +11,7 @@
 
 @implementation EVMotionHelper
 
-+ (void)parallaxMotionForView:(UIView *)view movementOffset:(CGSize)offset
-{
++ (void)parallaxMotionForView:(UIView *)view movementOffset:(CGSize)offset {
     UIInterpolatingMotionEffect *horizontalMotionEffect = [[UIInterpolatingMotionEffect alloc]
                                                            initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
     horizontalMotionEffect.minimumRelativeValue = @(-offset.width);

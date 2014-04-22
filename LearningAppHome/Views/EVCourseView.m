@@ -34,15 +34,18 @@
 @synthesize courseStepDescriptionTextView;
 @synthesize backgroundImageView;
 
-- (instancetype)initWithOrigin:(CGPoint)origin
++ (CGFloat)defaultHeight
 {
+    return VIEW_HEIGHT;
+}
+
+- (instancetype)initWithOrigin:(CGPoint)origin {
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     self = [self initWithFrame:CGRectMake(origin.x, origin.y, screenSize.width, VIEW_HEIGHT)];
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         [self initialize];
@@ -50,8 +53,7 @@
     return self;
 }
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
-{
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
         [self initialize];
@@ -59,8 +61,7 @@
     return self;
 }
 
-- (void)initialize
-{
+- (void)initialize {
     self.layer.masksToBounds = YES;
     backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(-PARALLAX_OFFSET.width,
                                                                          -PARALLAX_OFFSET.height,
@@ -92,18 +93,10 @@
     [self addSubview:courseStepDescriptionTextView];
 }
 
-- (void)configureWithCourseStep:(CourseStep *)courseStep
-{
+- (void)configureWithCourseStep:(CourseStep *)courseStep {
     courseStepName.text = courseStep.title;
     courseStepDescriptionTextView.text = [courseStep.descriptionText stripTags];
     backgroundImageView.image = [[UIImage imageNamed:@"takayama.jpg"] applyDarkEffect];
 }
-
-- (void)animate
-{
-    // Delete me
-}
-
-
 
 @end

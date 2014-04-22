@@ -12,8 +12,7 @@
 
 @implementation EVRestKitManager
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         [self setup];
@@ -23,16 +22,14 @@
 
 #pragma mark - Properties
 
-- (NSManagedObjectContext *)managedObjectContext
-{
+- (NSManagedObjectContext *)managedObjectContext {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     return objectManager.managedObjectStore.mainQueueManagedObjectContext;
 }
 
 #pragma mark - Setup
 
-- (void)setup
-{
+- (void)setup {
     NSError *error = nil;
     NSURL *modelURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"LearningAppModel" ofType:@"momd"]];
     
@@ -65,17 +62,16 @@
     
     [self createMappings];
     
-//#ifdef DEBUG
-//    RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
-//    RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
-//#else
+#ifdef RK_LOG_LEVEL_HIGH
+    RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
+    RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
+#else
     RKLogConfigureByName("RestKit/Network", RKLogLevelOff);
     RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelOff);
-//#endif
+#endif
 }
 
-- (void)createMappings
-{
+- (void)createMappings {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     RKManagedObjectStore *managedObjectStore = [RKManagedObjectStore defaultStore];
     

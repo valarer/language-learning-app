@@ -10,38 +10,8 @@
 
 @implementation NSString (HTMLHelpers)
 
-
-// Here is a much simpler solution to read (and only one line!)
-// return [string stringByReplacingOccurrencesOfString:@"<.*?>" withString:@"" options:NSRegularExpressionSearch range:NSMakeRange(0, [string length])];
-
-/**
- * Taken from http://stackoverflow.com/a/6171866
- * Changed it to a category
- */
-- (NSString *)stripTags
-{
-    NSMutableString *resultingString = [NSMutableString stringWithCapacity:[self length]];
-    
-    NSScanner *scanner = [NSScanner scannerWithString:self];
-    scanner.charactersToBeSkipped = NULL;
-    NSString *tempText = nil;
-    
-    while (![scanner isAtEnd])
-    {
-        [scanner scanUpToString:@"<" intoString:&tempText];
-        
-        if (tempText != nil)
-            [resultingString appendString:tempText];
-        
-        [scanner scanUpToString:@">" intoString:NULL];
-        
-        if (![scanner isAtEnd])
-            [scanner setScanLocation:[scanner scanLocation] + 1];
-        
-        tempText = nil;
-    }
-    
-    return resultingString;
+- (NSString *)stripTags {
+    return [self stringByReplacingOccurrencesOfString:@"<.*?>" withString:@"" options:NSRegularExpressionSearch range:NSMakeRange(0, [self length])];
 }
 
 @end

@@ -10,13 +10,11 @@
 
 @implementation NSManagedObject (EVHelpers)
 
-+ (instancetype)entity
-{
++ (instancetype)entity {
     return [[EVModelManager sharedModelController] entityForName:NSStringFromClass([self class])];
 }
 
-+ (NSString *)name
-{
++ (NSString *)name {
     return NSStringFromClass([self class]);
 }
 

@@ -10,8 +10,7 @@
 
 @implementation CourseStepProgress (DataHelpers)
 
-- (NSString *)completedPercentageString
-{
+- (NSString *)completedPercentageString {
     return [NSString stringWithFormat:@"%.0f%%", self.completedItems * 100.0f / self.courseStep.numberOfItems];
 }
 

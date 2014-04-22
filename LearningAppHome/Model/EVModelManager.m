@@ -22,8 +22,7 @@
     return _sharedModelController;
 }
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         _restKitManager = [EVRestKitManager new];
@@ -31,29 +30,25 @@
     return self;
 }
 
-- (id)entityForName:(NSString *)name
-{
+- (id)entityForName:(NSString *)name {
     return [NSEntityDescription insertNewObjectForEntityForName:name inManagedObjectContext:_restKitManager.managedObjectContext];
 }
 
 #pragma mark - Data fetchers
 
-- (User *)currentUser
-{
+- (User *)currentUser {
     // TODO: Get real current user
     return [[self allInstancesOf:@"User" where:nil isEqualto:nil orderedBy:nil] firstObject];
 }
 
-- (NSArray *)studyingCourseSteps
-{
+- (NSArray *)studyingCourseSteps {
     // TODO: Get real studying courses steps
     return [self allInstancesOf:@"CourseStep" where:nil isEqualto:nil orderedBy:nil];
 }
 
 #pragma mark - Progress
 
-- (CourseStepProgress *)progressForCourseStep:(CourseStep *)courseStep andUser:(User *)user
-{
+- (CourseStepProgress *)progressForCourseStep:(CourseStep *)courseStep andUser:(User *)user {
     NSSet *progresses = user.courseStepProgresses;
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"courseStep.identifier LIKE %@", courseStep.identifier];
@@ -72,8 +67,7 @@
 - (NSArray *)allInstancesOf:(NSString *)entityName
                       where:(NSString *)condition
                   isEqualto:(id)value
-                  orderedBy:(NSString *)property
-{
+                  orderedBy:(NSString *)property {
     NSManagedObjectContext *context = _restKitManager.managedObjectContext;
     NSError *error;
     
@@ -132,8 +126,7 @@
 - (NSArray *)allInstancesOf:(NSString *)entityName
 withPairColumnValueConditions:(NSDictionary *)columns
                   orderedBy:(NSString *)property
-                      limit:(NSUInteger)limit
-{
+                      limit:(NSUInteger)limit {
     
     NSManagedObjectContext *context = _restKitManager.managedObjectContext;
     NSError *error;
@@ -178,8 +171,7 @@ withPairColumnValueConditions:(NSDictionary *)columns
     return fetchedObjects;
 }
 
-- (id)singleInstanceOf:(NSString *)entityName where:(NSString *)condition isEqualTo:(id)value
-{
+- (id)singleInstanceOf:(NSString *)entityName where:(NSString *)condition isEqualTo:(id)value {
     NSManagedObjectContext *context = _restKitManager.managedObjectContext;
     NSError *error;
     
@@ -224,8 +216,7 @@ withPairColumnValueConditions:(NSDictionary *)columns
     return [fetchedObjects count] > 0 ? [fetchedObjects objectAtIndex:0] : nil;
 }
 
-- (void)saveContext
-{
+- (void)saveContext {
     NSError *error = nil;
     NSManagedObjectContext *managedObjectContext = _restKitManager.managedObjectContext;
     if (managedObjectContext != nil)
@@ -243,8 +234,7 @@ withPairColumnValueConditions:(NSDictionary *)columns
     }
 }
 
-- (void)clearEntityData:(NSArray *)entities
-{
+- (void)clearEntityData:(NSArray *)entities {
     NSManagedObjectContext *context = _restKitManager.managedObjectContext;
     
     for (NSString *entity in entities) {
@@ -270,8 +260,7 @@ withPairColumnValueConditions:(NSDictionary *)columns
     }
 }
 
-- (void)deleteEntity:(NSManagedObject *)entity
-{
+- (void)deleteEntity:(NSManagedObject *)entity {
     [_restKitManager.managedObjectContext deleteObject:entity];
     [self saveContext];
 }

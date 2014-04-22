@@ -24,7 +24,6 @@
 		0702D8D318DF8C3000EBEB7C /* EVCourseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8D118DF8C3000EBEB7C /* EVCourseView.m */; };
 		0702D8EA18DF8F5000EBEB7C /* EVModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8E918DF8F5000EBEB7C /* EVModelManager.m */; };
 		0702D8F418DF985E00EBEB7C /* CourseStepProgress+DataHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8F318DF985E00EBEB7C /* CourseStepProgress+DataHelpers.m */; };
-		0702D92A18DFC85900EBEB7C /* EVDataInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D92918DFC85900EBEB7C /* EVDataInitializer.m */; };
 		073D046D18E3D8250022B7C4 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 073D046418E3D72D0022B7C4 /* libRestKit.a */; };
 		073D046E18E3D8460022B7C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0702D8EB18DF8FD800EBEB7C /* Main.storyboard */; };
 		073D047018E3D87D0022B7C4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073D046F18E3D87D0022B7C4 /* CFNetwork.framework */; };
@@ -42,7 +41,6 @@
 		073D04B618E3F5D60022B7C4 /* CourseStepItemProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04B518E3F5D60022B7C4 /* CourseStepItemProgress.m */; };
 		073D04B918E3F5D60022B7C4 /* CourseStepProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04B818E3F5D60022B7C4 /* CourseStepProgress.m */; };
 		073D04BC18E3F6770022B7C4 /* EVCourseStepItemHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04BB18E3F6770022B7C4 /* EVCourseStepItemHelper.m */; };
-		073D04BF18E40B5D0022B7C4 /* EVCourseStepHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04BE18E40B5D0022B7C4 /* EVCourseStepHomeView.m */; };
 		073D04C818E41DFC0022B7C4 /* EVCourseStepItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04C618E41DFC0022B7C4 /* EVCourseStepItemCell.m */; };
 		073D04D518E425ED0022B7C4 /* CourseStepItem+DataHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04D418E425ED0022B7C4 /* CourseStepItem+DataHelpers.m */; };
 		073D04DE18E514B40022B7C4 /* CourseStepItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04DD18E514B40022B7C4 /* CourseStepItem.m */; };
@@ -112,7 +110,7 @@
 		0702D88C18DF824C00EBEB7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0702D88E18DF824C00EBEB7C /* LearningAppHome-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LearningAppHome-Prefix.pch"; sourceTree = "<group>"; };
 		0702D88F18DF824C00EBEB7C /* EVAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVAppDelegate.h; sourceTree = "<group>"; };
-		0702D89018DF824C00EBEB7C /* EVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVAppDelegate.m; sourceTree = "<group>"; };
+		0702D89018DF824C00EBEB7C /* EVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = EVAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0702D89818DF824C00EBEB7C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		0702D89E18DF824C00EBEB7C /* LearningAppHomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningAppHomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0702D89F18DF824C00EBEB7C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -123,15 +121,13 @@
 		0702D8CD18DF8C2F00EBEB7C /* EVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVViewController.h; sourceTree = "<group>"; };
 		0702D8CE18DF8C2F00EBEB7C /* EVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVViewController.m; sourceTree = "<group>"; };
 		0702D8D018DF8C3000EBEB7C /* EVCourseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVCourseView.h; sourceTree = "<group>"; };
-		0702D8D118DF8C3000EBEB7C /* EVCourseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVCourseView.m; sourceTree = "<group>"; };
+		0702D8D118DF8C3000EBEB7C /* EVCourseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = EVCourseView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0702D8E818DF8F5000EBEB7C /* EVModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVModelManager.h; sourceTree = "<group>"; };
-		0702D8E918DF8F5000EBEB7C /* EVModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVModelManager.m; sourceTree = "<group>"; };
+		0702D8E918DF8F5000EBEB7C /* EVModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = EVModelManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0702D8EC18DF8FD800EBEB7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LearningAppHome/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		0702D8EE18DF904200EBEB7C /* EVMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVMacros.h; sourceTree = "<group>"; };
 		0702D8F218DF985E00EBEB7C /* CourseStepProgress+DataHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CourseStepProgress+DataHelpers.h"; sourceTree = "<group>"; };
 		0702D8F318DF985E00EBEB7C /* CourseStepProgress+DataHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CourseStepProgress+DataHelpers.m"; sourceTree = "<group>"; };
-		0702D92818DFC85900EBEB7C /* EVDataInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVDataInitializer.h; sourceTree = "<group>"; };
-		0702D92918DFC85900EBEB7C /* EVDataInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVDataInitializer.m; sourceTree = "<group>"; };
 		073D045C18E3D72C0022B7C4 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		073D046F18E3D87D0022B7C4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		073D047118E3D88B0022B7C4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -143,7 +139,7 @@
 		073D048C18E3DE3E0022B7C4 /* EVConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVConstants.h; sourceTree = "<group>"; };
 		073D048D18E3DE3E0022B7C4 /* EVConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVConstants.m; sourceTree = "<group>"; };
 		073D04A118E3EE4F0022B7C4 /* EVCourseStepHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVCourseStepHelper.h; sourceTree = "<group>"; };
-		073D04A218E3EE4F0022B7C4 /* EVCourseStepHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVCourseStepHelper.m; sourceTree = "<group>"; };
+		073D04A218E3EE4F0022B7C4 /* EVCourseStepHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = EVCourseStepHelper.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		073D04A418E3F16F0022B7C4 /* EVModelHelperDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVModelHelperDelegate.h; sourceTree = "<group>"; };
 		073D04A518E3F47C0022B7C4 /* EVModelHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVModelHelper.h; sourceTree = "<group>"; };
 		073D04A618E3F47C0022B7C4 /* EVModelHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVModelHelper.m; sourceTree = "<group>"; };
@@ -158,13 +154,11 @@
 		073D04B718E3F5D60022B7C4 /* CourseStepProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseStepProgress.h; sourceTree = "<group>"; };
 		073D04B818E3F5D60022B7C4 /* CourseStepProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseStepProgress.m; sourceTree = "<group>"; };
 		073D04BA18E3F6770022B7C4 /* EVCourseStepItemHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVCourseStepItemHelper.h; sourceTree = "<group>"; };
-		073D04BB18E3F6770022B7C4 /* EVCourseStepItemHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVCourseStepItemHelper.m; sourceTree = "<group>"; };
-		073D04BD18E40B5D0022B7C4 /* EVCourseStepHomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVCourseStepHomeView.h; sourceTree = "<group>"; };
-		073D04BE18E40B5D0022B7C4 /* EVCourseStepHomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVCourseStepHomeView.m; sourceTree = "<group>"; };
+		073D04BB18E3F6770022B7C4 /* EVCourseStepItemHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = EVCourseStepItemHelper.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		073D04C518E41DFC0022B7C4 /* EVCourseStepItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVCourseStepItemCell.h; sourceTree = "<group>"; };
-		073D04C618E41DFC0022B7C4 /* EVCourseStepItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVCourseStepItemCell.m; sourceTree = "<group>"; };
+		073D04C618E41DFC0022B7C4 /* EVCourseStepItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = EVCourseStepItemCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		073D04D318E425ED0022B7C4 /* CourseStepItem+DataHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CourseStepItem+DataHelpers.h"; sourceTree = "<group>"; };
-		073D04D418E425ED0022B7C4 /* CourseStepItem+DataHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CourseStepItem+DataHelpers.m"; sourceTree = "<group>"; };
+		073D04D418E425ED0022B7C4 /* CourseStepItem+DataHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "CourseStepItem+DataHelpers.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		073D04DC18E514B40022B7C4 /* CourseStepItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseStepItem.h; sourceTree = "<group>"; };
 		073D04DD18E514B40022B7C4 /* CourseStepItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseStepItem.m; sourceTree = "<group>"; };
 		078178B818E013BD00A46DA8 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
@@ -340,8 +334,6 @@
 				0702D8EB18DF8FD800EBEB7C /* Main.storyboard */,
 				0702D8D018DF8C3000EBEB7C /* EVCourseView.h */,
 				0702D8D118DF8C3000EBEB7C /* EVCourseView.m */,
-				073D04BD18E40B5D0022B7C4 /* EVCourseStepHomeView.h */,
-				073D04BE18E40B5D0022B7C4 /* EVCourseStepHomeView.m */,
 				073D04C518E41DFC0022B7C4 /* EVCourseStepItemCell.h */,
 				073D04C618E41DFC0022B7C4 /* EVCourseStepItemCell.m */,
 			);
@@ -385,8 +377,6 @@
 			children = (
 				0702D8E818DF8F5000EBEB7C /* EVModelManager.h */,
 				0702D8E918DF8F5000EBEB7C /* EVModelManager.m */,
-				0702D92818DFC85900EBEB7C /* EVDataInitializer.h */,
-				0702D92918DFC85900EBEB7C /* EVDataInitializer.m */,
 				073D047918E3DB3B0022B7C4 /* EVRestKitManager.h */,
 				073D047A18E3DB3B0022B7C4 /* EVRestKitManager.m */,
 			);
@@ -621,7 +611,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				073D04AA18E3F5D40022B7C4 /* User.m in Sources */,
-				0702D92A18DFC85900EBEB7C /* EVDataInitializer.m in Sources */,
 				0702D8CB18DF8BBA00EBEB7C /* LearningAppModel.xcdatamodeld in Sources */,
 				073D04D518E425ED0022B7C4 /* CourseStepItem+DataHelpers.m in Sources */,
 				073D04C818E41DFC0022B7C4 /* EVCourseStepItemCell.m in Sources */,
@@ -641,7 +630,6 @@
 				07AE234618E137CB00A9D1BA /* EVMotionHelper.m in Sources */,
 				073D04B918E3F5D60022B7C4 /* CourseStepProgress.m in Sources */,
 				0702D8D318DF8C3000EBEB7C /* EVCourseView.m in Sources */,
-				073D04BF18E40B5D0022B7C4 /* EVCourseStepHomeView.m in Sources */,
 				073D04BC18E3F6770022B7C4 /* EVCourseStepItemHelper.m in Sources */,
 				073D04B618E3F5D60022B7C4 /* CourseStepItemProgress.m in Sources */,
 				073D04B018E3F5D50022B7C4 /* CourseStep.m in Sources */,
@@ -777,6 +765,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LearningAppHome/LearningAppHome-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -801,6 +790,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LearningAppHome/LearningAppHome-Prefix.pch";
 				HEADER_SEARCH_PATHS = (

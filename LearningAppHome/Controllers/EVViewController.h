@@ -13,7 +13,4 @@
 
 @interface EVViewController : EVNetworkOperatorBaseViewController <UITableViewDataSource, UITableViewDelegate, EVModelHelperDelegate>
 
-@property (strong, nonatomic) EVCourseView *latestCourseView;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-
 @end

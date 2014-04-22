@@ -13,21 +13,20 @@
 #import "EVCourseStepItemCell.h"
 #import "MBProgressHUD.h"
 
-@interface EVViewController ()
-{
+@interface EVViewController () {
     EVCourseStepHelper *_courseHelper;
     EVCourseStepItemHelper *_courseItemHelper;
     NSArray *_items;
 }
 
 @property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) EVCourseView *latestCourseView;
 
 @end
 
 @implementation EVViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 
     [self applyAppearance];
@@ -37,34 +36,30 @@
     [self loadData];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Setup
 
-- (void)initializeViews
-{
+- (void)initializeViews {
     _latestCourseView = [[EVCourseView alloc] initWithOrigin:CGPointMake(0, 0)];
     
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0,
+    float navigationHeight = self.navigationController.navigationBar.bounds.size.height + [UIApplication sharedApplication].statusBarFrame.size.height;
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, navigationHeight,
                                                                self.view.bounds.size.width, self.view.bounds.size.height)
                                               style:UITableViewStylePlain];
     
-    // Why are you putting a non-scrolling table view into a scroll view? I would think this would not allow the table view to optimaize view usage.
     _tableView.dataSource = self;
     _tableView.delegate = self;
     _tableView.rowHeight = 70;
-    _tableView.scrollEnabled = NO;
-    [_scrollView addSubview:_tableView];
+    [self.view addSubview:_tableView];
     
     [_tableView registerClass:[EVCourseStepItemCell class] forCellReuseIdentifier:@"Cell"];
+    [_tableView setSectionHeaderHeight:_latestCourseView.bounds.size.height];
 }
 
-- (void)applyAppearance
-{
+- (void)applyAppearance {
     // Nav bar theme
     self.navigationController.navigationBar.barTintColor = COLOR_FROM_HEX(0xff8a00);
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
@@ -79,8 +74,7 @@
 
 #pragma mark - Data
 
-- (void)loadData
-{
+- (void)loadData {
     if (!_courseHelper) {
         _courseHelper = [EVCourseStepHelper new];
     }
@@ -95,25 +89,15 @@
     
     self.networkOperationsCounter = 2;
     
-    // Fetch Japanese course step 1
-    [_courseHelper fetchCourseStepWithId:566921];
-    [_courseItemHelper fetchItemsForCourseWithId:566921];
-
-    // If you comment out code, please add a note, otherwise remove.
-    // Fetch English course
-//    [_courseHelper fetchCourseStepWithId:470265];
-//    [_courseItemHelper fetchItemsForCourseWithId:470265];
-
-    // Fetch Simplified Chinese course
-//    [_courseHelper fetchCourseStepWithId:695684];
-//    [_courseItemHelper fetchItemsForCourseWithId:695684];
-
+    // Japanese course step 1, English, Simplified Chinese
+    int courseId[3] = {566921, 470265, 695684};
+    [_courseHelper fetchCourseStepWithId:courseId[0]];
+    [_courseItemHelper fetchItemsForCourseWithId:courseId[0]];
 }
 
 #pragma mark ModelHelper delegate
 
-- (void)didFetchObject:(id)object forEntity:(NSString *)entity
-{
+- (void)didFetchObject:(id)object forEntity:(NSString *)entity {
     // A better check would be on object class (i.e. [object isKindOfClass:[CourseStep class]]) but I understand this is how the model helper was designed.  
     if ([entity isEqualToString:[CourseStep name]]) {
         CourseStep *courseStep = (CourseStep *)object;
@@ -122,26 +106,20 @@
     [self finishedNetworkOperation];
 }
 
-- (void)didFetchObjects:(NSArray *)objects forEntity:(NSString *)entity
-{
+- (void)didFetchObjects:(NSArray *)objects forEntity:(NSString *)entity {
     if ([entity isEqualToString:[CourseStepItem name]]) {
         _items = objects;
-        CGFloat contentHeight = _tableView.rowHeight * [_items count] + _latestCourseView.bounds.size.height;
-        // Using CGRectMake is preferable to casting a self made struct to CGRect
-        _tableView.frame = (CGRect){ _tableView.frame.origin, CGSizeMake(_tableView.bounds.size.width, contentHeight) };
-        _scrollView.contentSize = CGSizeMake(_tableView.bounds.size.width, contentHeight);
         [_tableView reloadData];
     }
     [self finishedNetworkOperation];
 }
 
-- (void)didFetchFailForEntity:(NSString *)entity error:(NSError *)error
-{
+- (void)didFetchFailForEntity:(NSString *)entity error:(NSError *)error {
     [[[UIAlertView alloc] initWithTitle:@"Error"
                                 message:[NSString stringWithFormat:@"Couldn't fetch objects for Entity: %@", entity]
-                              delegate:nil
-                     cancelButtonTitle:@"OK"
-                     otherButtonTitles:nil] show];
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
 }
 
 #pragma mark - UITableView
@@ -152,19 +130,14 @@
     return 1;
 }
 
-// Method names should not wrap
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [_items count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EVCourseStepItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    
-    // Even though the shorthand for accessing items in a NSArray objects are convenient, I would prefer if you used the objectAtIndex method because it makes the NSArray object appear to be id[] which it isn't.
-    CourseStepItem *item = _items[indexPath.row];
+
+    CourseStepItem *item = [_items objectAtIndex:indexPath.row];
     [cell configureWithModel:item];
     
     return cell;
@@ -172,19 +145,36 @@
 
 #pragma mark Delegate
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     return _latestCourseView;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return _latestCourseView.bounds.size.height;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    // Code for making the section header appear/disappear
+    CGFloat height;
+    if (scrollView.contentOffset.y > 150) {
+        height = 0;
+        if (height != _latestCourseView.bounds.size.height) {
+            [UIView animateWithDuration:0.7 animations:^{
+                [_tableView beginUpdates];
+                [_tableView setSectionHeaderHeight:height];
+                [_tableView endUpdates];
+            }];
+        }
+    }
+    else {
+        height = [EVCourseView defaultHeight];
+        // Do not use UIView animation block here because there is a strange bug
+        if (height != _latestCourseView.bounds.size.height) {
+            [_tableView beginUpdates];
+            [_tableView setSectionHeaderHeight:height];
+            [_tableView endUpdates];
+        }
+    }
 }
 
 @end

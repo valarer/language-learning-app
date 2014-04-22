@@ -10,13 +10,11 @@
 
 @implementation CourseStepItem (DataHelpers)
 
-- (NSString *)hiraganaWord
-{
+- (NSString *)hiraganaWord {
     return [self transliterationForKey:@"Hira"];
 }
 
-- (NSString *)transliterationForKey:(NSString *)key
-{
+- (NSString *)transliterationForKey:(NSString *)key {
     // You should bind mappings to objects otherwise they become difficult to maintain 
     if (self.transliterations) {
         NSArray *transliterations = [NSKeyedUnarchiver unarchiveObjectWithData:self.transliterations];
