@@ -12,7 +12,7 @@
 
 @interface EVNetworkOperatorBaseViewController : UIViewController
 
-@property (strong, nonatomic) MBProgressHUD *loadingIndicator;
+@property (retain, nonatomic) MBProgressHUD *loadingIndicator;
 @property (nonatomic) short networkOperationsCounter;
 
 - (void)finishedNetworkOperation;

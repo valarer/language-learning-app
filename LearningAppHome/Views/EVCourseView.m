@@ -17,20 +17,20 @@
 #define LINE_HORIZONTAL_END_POINT 160.0f
 
 @interface EVCourseView () {
-    UILabel *courseStepName;
+    UILabel *courseStepNameLabel;
     UITextView *courseStepDescriptionTextView;
     UIImageView *backgroundImageView;
 }
 
-@property (strong, nonatomic) UILabel *courseStepName;
-@property (strong, nonatomic) UITextView *courseStepDescriptionTextView;
-@property (strong, nonatomic) UIImageView *backgroundImageView;
+@property (retain, nonatomic) UILabel *courseStepNameLabel;
+@property (retain, nonatomic) UITextView *courseStepDescriptionTextView;
+@property (retain, nonatomic) UIImageView *backgroundImageView;
 
 @end
 
 @implementation EVCourseView
 
-@synthesize courseStepName;
+@synthesize courseStepNameLabel;
 @synthesize courseStepDescriptionTextView;
 @synthesize backgroundImageView;
 
@@ -73,17 +73,17 @@
     [EVMotionHelper parallaxMotionForView:backgroundImageView movementOffset:PARALLAX_OFFSET];
     
     CGFloat margin = 10.0f; // Move to macro
-    courseStepName = [[UILabel alloc] initWithFrame:CGRectMake(margin, 10,
+    courseStepNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(margin, 10,
                                                                 self.bounds.size.width - margin * 2, 20)];
-    courseStepName.numberOfLines = 0;
-    courseStepName.textColor = [UIColor whiteColor];
-    courseStepName.font = FONT_TYPE(@"Light", 18);
-    [self addSubview:courseStepName];
+    courseStepNameLabel.numberOfLines = 0;
+    courseStepNameLabel.textColor = [UIColor whiteColor];
+    courseStepNameLabel.font = FONT_TYPE(@"Light", 18);
+    [self addSubview:courseStepNameLabel];
     
     courseStepDescriptionTextView = [[UITextView alloc] initWithFrame:CGRectMake(margin,
-                                                                                  courseStepName.frame.origin.y + courseStepName.frame.size.height,
-                                                                                  self.bounds.size.width - margin * 2,
-                                                                                  self.bounds.size.height - courseStepName.frame.origin.y)];
+                                                                                 courseStepNameLabel.frame.origin.y + courseStepNameLabel.frame.size.height,
+                                                                                 self.bounds.size.width - margin * 2,
+                                                                                 self.bounds.size.height - courseStepNameLabel.frame.origin.y)];
     courseStepDescriptionTextView.textColor = [UIColor whiteColor];
     courseStepDescriptionTextView.font = FONT_TYPE(@"Thin", 13);
     courseStepDescriptionTextView.backgroundColor = [UIColor clearColor];
@@ -94,9 +94,16 @@
 }
 
 - (void)configureWithCourseStep:(CourseStep *)courseStep {
-    courseStepName.text = courseStep.title;
+    courseStepNameLabel.text = courseStep.title;
     courseStepDescriptionTextView.text = [courseStep.descriptionText stripTags];
     backgroundImageView.image = [[UIImage imageNamed:@"takayama.jpg"] applyDarkEffect];
+}
+
+- (void)dealloc {
+    RELEASE_AND_NULLIFY(courseStepNameLabel);
+    RELEASE_AND_NULLIFY(courseStepDescriptionTextView);
+    RELEASE_AND_NULLIFY(backgroundImageView);
+    [super dealloc];
 }
 
 @end

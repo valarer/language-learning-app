@@ -30,44 +30,18 @@
     return self;
 }
 
+- (void)dealloc {
+    RELEASE_AND_NULLIFY(_restKitManager);
+    [super dealloc];
+}
+
 - (id)entityForName:(NSString *)name {
     return [NSEntityDescription insertNewObjectForEntityForName:name inManagedObjectContext:_restKitManager.managedObjectContext];
 }
 
-#pragma mark - Data fetchers
-
-- (User *)currentUser {
-    // TODO: Get real current user
-    return [[self allInstancesOf:@"User" where:nil isEqualto:nil orderedBy:nil] firstObject];
-}
-
-- (NSArray *)studyingCourseSteps {
-    // TODO: Get real studying courses steps
-    return [self allInstancesOf:@"CourseStep" where:nil isEqualto:nil orderedBy:nil];
-}
-
-#pragma mark - Progress
-
-- (CourseStepProgress *)progressForCourseStep:(CourseStep *)courseStep andUser:(User *)user {
-    NSSet *progresses = user.courseStepProgresses;
-    
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"courseStep.identifier LIKE %@", courseStep.identifier];
-    NSSet *filteredProgresses = [progresses filteredSetUsingPredicate:predicate];
-    CourseStepProgress *courseStepProgress = nil;
-    if ([filteredProgresses count] > 0) {
-        courseStepProgress = [filteredProgresses allObjects][0];
-    }
-    
-    return courseStepProgress;
-}
-
-
 #pragma mark - Data fetchers / helpers
 
-- (NSArray *)allInstancesOf:(NSString *)entityName
-                      where:(NSString *)condition
-                  isEqualto:(id)value
-                  orderedBy:(NSString *)property {
+- (NSArray *)allInstancesOf:(NSString *)entityName where:(NSString *)condition isEqualto:(id)value orderedBy:(NSString *)property {
     NSManagedObjectContext *context = _restKitManager.managedObjectContext;
     NSError *error;
     
@@ -76,26 +50,22 @@
         NSLog(@"Error: Couldn't fetch: %@", [error localizedDescription]);
     }
     
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSFetchRequest *fetchRequest = [[[NSFetchRequest alloc] init] autorelease];
     NSEntityDescription *entity  = [NSEntityDescription entityForName:entityName
                                                inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
     
     // If 'condition' is not nil, limit results to that condition
-    if (condition && value)
-    {
+    if (condition && value) {
         NSPredicate *pred;
-        if([value isKindOfClass:[NSManagedObject class]])
-        {
+        if([value isKindOfClass:[NSManagedObject class]]) {
             value = [((NSManagedObject *)value) objectID];
             pred = [NSPredicate predicateWithFormat:@"(%@ = %@)", condition, value];
-        } else if ([value isKindOfClass:[NSString class]])
-        {
+        } else if ([value isKindOfClass:[NSString class]]) {
             NSString *format  = [NSString stringWithFormat:@"%@ LIKE '%@'", condition, value];
             pred = [NSPredicate predicateWithFormat:format];
         }
-        else if ([value isKindOfClass:[NSNumber class]])
-        {
+        else if ([value isKindOfClass:[NSNumber class]]) {
             NSString *format  = [NSString stringWithFormat:@"%@ == %i", condition, [value intValue]];
             pred = [NSPredicate predicateWithFormat:format];
         }
@@ -107,58 +77,9 @@
     }
     
     // If 'property' is not nil, have the results sorted
-    if (property)
-    {
-        NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:property
-                                                           ascending:YES];
-        
-        NSArray *sortDescriptors = [NSArray arrayWithObject:sd];
-        
-        [fetchRequest setSortDescriptors:sortDescriptors];
-    }
-    
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest
-                                                     error:&error];
-    
-    return fetchedObjects;
-}
-
-- (NSArray *)allInstancesOf:(NSString *)entityName
-withPairColumnValueConditions:(NSDictionary *)columns
-                  orderedBy:(NSString *)property
-                      limit:(NSUInteger)limit {
-    
-    NSManagedObjectContext *context = _restKitManager.managedObjectContext;
-    NSError *error;
-    
-    if (![context save:&error])
-    {
-        NSLog(@"Error: Couldn't fetch: %@", [error localizedDescription]);
-    }
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity  = [NSEntityDescription entityForName:entityName
-                                               inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
-    
-    // If 'columns' is not nil, limit results to that condition
-    if (columns)
-    {
-        __block NSString *format  = [NSString string];
-        [columns enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-            id object = [obj isKindOfClass:[NSString class]] ? [NSString stringWithFormat:@"'%@'", obj] : obj;
-            format  = [format stringByAppendingFormat:@"(%@ %@) AND ", key, object];
-        }];
-        
-        NSPredicate *pred = [NSPredicate predicateWithFormat:[format substringToIndex:format.length -  5]];
-        [fetchRequest setPredicate:pred];
-    }
-    
-    // If 'property' is not nil, have the results sorted
-    if (property)
-    {
-        NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:property
-                                                           ascending:YES];
+    if (property) {
+        NSSortDescriptor *sd = [[[NSSortDescriptor alloc] initWithKey:property
+                                                            ascending:YES] autorelease];
         
         NSArray *sortDescriptors = [NSArray arrayWithObject:sd];
         
@@ -180,7 +101,7 @@ withPairColumnValueConditions:(NSDictionary *)columns
         NSLog(@"Error: Couldn't fetch: %@", [error localizedDescription]);
     }
     
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSFetchRequest *fetchRequest = [[[NSFetchRequest alloc] init] autorelease];
     NSEntityDescription *entity  = [NSEntityDescription entityForName:entityName
                                                inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
@@ -239,7 +160,7 @@ withPairColumnValueConditions:(NSDictionary *)columns
     
     for (NSString *entity in entities) {
         
-        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
         [request setEntity:[NSEntityDescription entityForName:entity
                                        inManagedObjectContext:context]];
         [request setIncludesPropertyValues:NO];

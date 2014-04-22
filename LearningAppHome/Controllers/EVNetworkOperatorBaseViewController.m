@@ -15,14 +15,6 @@
 
 @implementation EVNetworkOperatorBaseViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -31,12 +23,15 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+    RELEASE_AND_NULLIFY(_loadingIndicator);
+    [super dealloc];
 }
 
 - (void)configureLoadingHUD {
-    if (!_loadingIndicator)
-    {
+    if (!_loadingIndicator) {
         UIView *view = self.navigationController ? self.navigationController.view : self.view;
         _loadingIndicator = [[MBProgressHUD alloc] initWithView:view];
         [view addSubview:_loadingIndicator];

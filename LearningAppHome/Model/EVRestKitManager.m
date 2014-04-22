@@ -33,22 +33,22 @@
     NSError *error = nil;
     NSURL *modelURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"LearningAppModel" ofType:@"momd"]];
     
-    NSManagedObjectModel *managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-    RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWithManagedObjectModel:managedObjectModel];
+    NSManagedObjectModel *managedObjectModel = [[[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL] autorelease];
+    RKManagedObjectStore *managedObjectStore = [[[RKManagedObjectStore alloc] initWithManagedObjectModel:managedObjectModel] autorelease];
     
     // Initialize the Core Data stack
     [managedObjectStore createPersistentStoreCoordinator];
     
     NSString *storePath = [RKApplicationDataDirectory() stringByAppendingPathComponent:@"LearningAppHome.sqlite"];
-    NSPersistentStore __unused *persistentStore = [managedObjectStore addSQLitePersistentStoreAtPath:storePath
-                                                                              fromSeedDatabaseAtPath:nil
-                                                                                   withConfiguration:nil
-                                                                                             options:nil
-                                                                                               error:&error];
+    NSPersistentStore *persistentStore = [managedObjectStore addSQLitePersistentStoreAtPath:storePath
+                                                                     fromSeedDatabaseAtPath:nil
+                                                                          withConfiguration:nil
+                                                                                    options:nil
+                                                                                      error:&error];
     
-    // Always check that error points to nothing after passing it into a function
-    
-    NSAssert(persistentStore, @"Failed to add persistent store: %@", error);
+    if (error) {
+        NSAssert(persistentStore, @"Failed to add persistent store: %@", error);
+    }
     
     [managedObjectStore createManagedObjectContexts];
     

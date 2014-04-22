@@ -16,3 +16,7 @@
 
 #define FONT(s) [UIFont fontWithName:@"HelveticaNeue" size:s]
 #define FONT_TYPE(type, s) [UIFont fontWithName:@"HelveticaNeue-" type size:s]
+
+
+// Memory Management
+#define RELEASE_AND_NULLIFY(var) [var release], var = nil

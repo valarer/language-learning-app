@@ -12,7 +12,7 @@
 		0702D88518DF824C00EBEB7C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0702D88418DF824C00EBEB7C /* UIKit.framework */; };
 		0702D88B18DF824C00EBEB7C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0702D88918DF824C00EBEB7C /* InfoPlist.strings */; };
 		0702D88D18DF824C00EBEB7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D88C18DF824C00EBEB7C /* main.m */; };
-		0702D89118DF824C00EBEB7C /* EVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D89018DF824C00EBEB7C /* EVAppDelegate.m */; };
+		0702D89118DF824C00EBEB7C /* EVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D89018DF824C00EBEB7C /* EVAppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0702D89918DF824C00EBEB7C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0702D89818DF824C00EBEB7C /* Images.xcassets */; };
 		0702D8A018DF824C00EBEB7C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0702D89F18DF824C00EBEB7C /* XCTest.framework */; };
 		0702D8A118DF824C00EBEB7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0702D88018DF824C00EBEB7C /* Foundation.framework */; };
@@ -20,9 +20,9 @@
 		0702D8AA18DF824C00EBEB7C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0702D8A818DF824C00EBEB7C /* InfoPlist.strings */; };
 		0702D8AC18DF824C00EBEB7C /* LearningAppHomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8AB18DF824C00EBEB7C /* LearningAppHomeTests.m */; };
 		0702D8CB18DF8BBA00EBEB7C /* LearningAppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8C918DF8BBA00EBEB7C /* LearningAppModel.xcdatamodeld */; };
-		0702D8D218DF8C3000EBEB7C /* EVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8CE18DF8C2F00EBEB7C /* EVViewController.m */; };
-		0702D8D318DF8C3000EBEB7C /* EVCourseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8D118DF8C3000EBEB7C /* EVCourseView.m */; };
-		0702D8EA18DF8F5000EBEB7C /* EVModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8E918DF8F5000EBEB7C /* EVModelManager.m */; };
+		0702D8D218DF8C3000EBEB7C /* EVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8CE18DF8C2F00EBEB7C /* EVViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0702D8D318DF8C3000EBEB7C /* EVCourseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8D118DF8C3000EBEB7C /* EVCourseView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0702D8EA18DF8F5000EBEB7C /* EVModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8E918DF8F5000EBEB7C /* EVModelManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0702D8F418DF985E00EBEB7C /* CourseStepProgress+DataHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 0702D8F318DF985E00EBEB7C /* CourseStepProgress+DataHelpers.m */; };
 		073D046D18E3D8250022B7C4 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 073D046418E3D72D0022B7C4 /* libRestKit.a */; };
 		073D046E18E3D8460022B7C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0702D8EB18DF8FD800EBEB7C /* Main.storyboard */; };
@@ -31,7 +31,7 @@
 		073D047418E3D8A20022B7C4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073D047318E3D8A20022B7C4 /* MobileCoreServices.framework */; };
 		073D047618E3D8AA0022B7C4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073D047518E3D8AA0022B7C4 /* Security.framework */; };
 		073D047818E3D8B50022B7C4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073D047718E3D8B50022B7C4 /* SystemConfiguration.framework */; };
-		073D047B18E3DB3B0022B7C4 /* EVRestKitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D047A18E3DB3B0022B7C4 /* EVRestKitManager.m */; };
+		073D047B18E3DB3B0022B7C4 /* EVRestKitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D047A18E3DB3B0022B7C4 /* EVRestKitManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		073D048E18E3DE3E0022B7C4 /* EVConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D048D18E3DE3E0022B7C4 /* EVConstants.m */; };
 		073D04A318E3EE4F0022B7C4 /* EVCourseStepHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04A218E3EE4F0022B7C4 /* EVCourseStepHelper.m */; };
 		073D04A718E3F47C0022B7C4 /* EVModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04A618E3F47C0022B7C4 /* EVModelHelper.m */; };
@@ -41,14 +41,14 @@
 		073D04B618E3F5D60022B7C4 /* CourseStepItemProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04B518E3F5D60022B7C4 /* CourseStepItemProgress.m */; };
 		073D04B918E3F5D60022B7C4 /* CourseStepProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04B818E3F5D60022B7C4 /* CourseStepProgress.m */; };
 		073D04BC18E3F6770022B7C4 /* EVCourseStepItemHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04BB18E3F6770022B7C4 /* EVCourseStepItemHelper.m */; };
-		073D04C818E41DFC0022B7C4 /* EVCourseStepItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04C618E41DFC0022B7C4 /* EVCourseStepItemCell.m */; };
+		073D04C818E41DFC0022B7C4 /* EVCourseStepItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04C618E41DFC0022B7C4 /* EVCourseStepItemCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		073D04D518E425ED0022B7C4 /* CourseStepItem+DataHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04D418E425ED0022B7C4 /* CourseStepItem+DataHelpers.m */; };
 		073D04DE18E514B40022B7C4 /* CourseStepItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 073D04DD18E514B40022B7C4 /* CourseStepItem.m */; };
 		078178BA18E013BD00A46DA8 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 078178B918E013BD00A46DA8 /* UIImage+ImageEffects.m */; };
 		0789149518E53ADA00FE2FA5 /* NSString+HTMLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 0789149418E53ADA00FE2FA5 /* NSString+HTMLHelpers.m */; };
 		0789149A18E544E700FE2FA5 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 0789149718E544E700FE2FA5 /* LICENSE */; };
 		0789149B18E544E700FE2FA5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0789149918E544E700FE2FA5 /* MBProgressHUD.m */; };
-		0789149E18E545D400FE2FA5 /* EVNetworkOperatorBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0789149D18E545D400FE2FA5 /* EVNetworkOperatorBaseViewController.m */; };
+		0789149E18E545D400FE2FA5 /* EVNetworkOperatorBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0789149D18E545D400FE2FA5 /* EVNetworkOperatorBaseViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		07AE234618E137CB00A9D1BA /* EVMotionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AE234518E137CB00A9D1BA /* EVMotionHelper.m */; };
 		07B067A918DFF74C00E6CF80 /* NSManagedObject+EVHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B067A818DFF74C00E6CF80 /* NSManagedObject+EVHelpers.m */; };
 		07B067AD18E00CE000E6CF80 /* takayama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07B067AC18E00CE000E6CF80 /* takayama.jpg */; };

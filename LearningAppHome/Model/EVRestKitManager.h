@@ -10,6 +10,6 @@
 
 @interface EVRestKitManager : NSObject
 
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (readonly, retain, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

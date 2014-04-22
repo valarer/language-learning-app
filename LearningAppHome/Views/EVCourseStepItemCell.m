@@ -12,10 +12,10 @@
 
 @interface EVCourseStepItemCell ()
 
-@property (strong, nonatomic) UILabel *wordLabel;
-@property (strong, nonatomic) UILabel *transliterationLabel;
-@property (strong, nonatomic) UILabel *meaningLabel;
-@property (strong, nonatomic) UILabel *partOfSpeechLabel;
+@property (retain, nonatomic) UILabel *wordLabel;
+@property (retain, nonatomic) UILabel *transliterationLabel;
+@property (retain, nonatomic) UILabel *meaningLabel;
+@property (retain, nonatomic) UILabel *partOfSpeechLabel;
 
 @end
 
@@ -53,6 +53,14 @@
     [self addSubview:_partOfSpeechLabel];
 }
 
+- (void)dealloc {
+    RELEASE_AND_NULLIFY(_wordLabel);
+    RELEASE_AND_NULLIFY(_transliterationLabel);
+    RELEASE_AND_NULLIFY(_meaningLabel);
+    RELEASE_AND_NULLIFY(_partOfSpeechLabel);
+    [super dealloc];
+}
+
 #pragma mark - Data configuration
 
 - (void)configureWithModel:(CourseStepItem *)courseStepItem {
@@ -64,7 +72,8 @@
 
     if (![courseStepItem.partOfSpeech isEqualToString:@"None"]) {
         _partOfSpeechLabel.text = courseStepItem.partOfSpeech;
-    }else {
+    }
+    else {
         _partOfSpeechLabel.text = @"";
     }
     

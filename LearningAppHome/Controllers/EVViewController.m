@@ -19,8 +19,8 @@
     NSArray *_items;
 }
 
-@property (strong, nonatomic) UITableView *tableView;
-@property (strong, nonatomic) EVCourseView *latestCourseView;
+@property (retain, nonatomic) UITableView *tableView;
+@property (retain, nonatomic) EVCourseView *latestCourseView;
 
 @end
 
@@ -40,6 +40,12 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)dealloc {
+    RELEASE_AND_NULLIFY(_latestCourseView);
+    RELEASE_AND_NULLIFY(_tableView);
+    [super dealloc];
+}
+
 #pragma mark - Setup
 
 - (void)initializeViews {
@@ -47,7 +53,7 @@
     
     float navigationHeight = self.navigationController.navigationBar.bounds.size.height + [UIApplication sharedApplication].statusBarFrame.size.height;
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, navigationHeight,
-                                                               self.view.bounds.size.width, self.view.bounds.size.height)
+                                                               self.view.bounds.size.width, self.view.bounds.size.height - navigationHeight)
                                               style:UITableViewStylePlain];
     
     _tableView.dataSource = self;
@@ -98,7 +104,6 @@
 #pragma mark ModelHelper delegate
 
 - (void)didFetchObject:(id)object forEntity:(NSString *)entity {
-    // A better check would be on object class (i.e. [object isKindOfClass:[CourseStep class]]) but I understand this is how the model helper was designed.  
     if ([entity isEqualToString:[CourseStep name]]) {
         CourseStep *courseStep = (CourseStep *)object;
         [_latestCourseView configureWithCourseStep:courseStep];
@@ -108,18 +113,19 @@
 
 - (void)didFetchObjects:(NSArray *)objects forEntity:(NSString *)entity {
     if ([entity isEqualToString:[CourseStepItem name]]) {
-        _items = objects;
+        _items = [objects retain];
         [_tableView reloadData];
     }
     [self finishedNetworkOperation];
 }
 
 - (void)didFetchFailForEntity:(NSString *)entity error:(NSError *)error {
-    [[[UIAlertView alloc] initWithTitle:@"Error"
+    UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Error"
                                 message:[NSString stringWithFormat:@"Couldn't fetch objects for Entity: %@", entity]
                                delegate:nil
                       cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
+                      otherButtonTitles:nil] autorelease];
+    [alert show];
 }
 
 #pragma mark - UITableView

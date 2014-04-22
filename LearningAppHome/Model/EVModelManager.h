@@ -20,14 +20,11 @@
 
 @interface EVModelManager : NSObject
 
-@property (strong, nonatomic) EVRestKitManager *restKitManager;
+@property (retain, nonatomic) EVRestKitManager *restKitManager;
 
 + (EVModelManager *)sharedModelController;
 
 - (id)entityForName:(NSString *)name;
 - (void)clearEntityData:(NSArray *)entities;
-
-
-- (User *)currentUser;
 
 @end
