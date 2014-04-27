@@ -24,12 +24,12 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self instantiateViews];
+        [self initialize];
     }
     return self;
 }
 
-- (void)instantiateViews {
+- (void)initialize {
     _wordLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, 76, 52)];
     _wordLabel.font = FONT(20);
     _wordLabel.textAlignment = NSTextAlignmentCenter;

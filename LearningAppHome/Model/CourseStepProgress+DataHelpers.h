@@ -10,6 +10,6 @@
 
 @interface CourseStepProgress (DataHelpers)
 
-@property (strong, nonatomic, readonly) NSString *completedPercentageString;
+@property (retain, nonatomic, readonly) NSString *completedPercentageString;
 
 @end

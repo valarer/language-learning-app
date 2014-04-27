@@ -93,17 +93,19 @@
     [self addSubview:courseStepDescriptionTextView];
 }
 
-- (void)configureWithCourseStep:(CourseStep *)courseStep {
-    courseStepNameLabel.text = courseStep.title;
-    courseStepDescriptionTextView.text = [courseStep.descriptionText stripTags];
-    backgroundImageView.image = [[UIImage imageNamed:@"takayama.jpg"] applyDarkEffect];
-}
-
 - (void)dealloc {
     RELEASE_AND_NULLIFY(courseStepNameLabel);
     RELEASE_AND_NULLIFY(courseStepDescriptionTextView);
     RELEASE_AND_NULLIFY(backgroundImageView);
     [super dealloc];
+}
+
+#pragma mark - Data configuration
+
+- (void)configureWithCourseStep:(CourseStep *)courseStep {
+    courseStepNameLabel.text = courseStep.title;
+    courseStepDescriptionTextView.text = [courseStep.descriptionText stripTags];
+    backgroundImageView.image = [[UIImage imageNamed:@"takayama.jpg"] applyDarkEffect];
 }
 
 @end

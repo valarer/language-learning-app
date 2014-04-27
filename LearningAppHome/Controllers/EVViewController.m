@@ -43,26 +43,32 @@
 - (void)dealloc {
     RELEASE_AND_NULLIFY(_latestCourseView);
     RELEASE_AND_NULLIFY(_tableView);
+    RELEASE_AND_NULLIFY(_items);
     [super dealloc];
 }
 
 #pragma mark - Setup
 
 - (void)initializeViews {
-    _latestCourseView = [[EVCourseView alloc] initWithOrigin:CGPointMake(0, 0)];
-    
     float navigationHeight = self.navigationController.navigationBar.bounds.size.height + [UIApplication sharedApplication].statusBarFrame.size.height;
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, navigationHeight,
-                                                               self.view.bounds.size.width, self.view.bounds.size.height - navigationHeight)
+    
+    _latestCourseView = [[EVCourseView alloc] initWithOrigin:CGPointMake(0, navigationHeight)];
+    
+    float titleOffset = 35.f;
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, navigationHeight + titleOffset,
+                                                               self.view.bounds.size.width, self.view.bounds.size.height - navigationHeight - titleOffset)
                                               style:UITableViewStylePlain];
     
     _tableView.dataSource = self;
     _tableView.delegate = self;
     _tableView.rowHeight = 70;
-    [self.view addSubview:_tableView];
-    
+    _tableView.contentInset = UIEdgeInsetsMake(_latestCourseView.bounds.size.height - titleOffset, 0, 0, 0);
+    _tableView.backgroundView = nil;
+    _tableView.backgroundColor = [UIColor clearColor];
     [_tableView registerClass:[EVCourseStepItemCell class] forCellReuseIdentifier:@"Cell"];
-    [_tableView setSectionHeaderHeight:_latestCourseView.bounds.size.height];
+    
+    [self.view addSubview:_latestCourseView];
+    [self.view addSubview:_tableView];
 }
 
 - (void)applyAppearance {
@@ -151,36 +157,8 @@
 
 #pragma mark Delegate
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    return _latestCourseView;
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    // Code for making the section header appear/disappear
-    CGFloat height;
-    if (scrollView.contentOffset.y > 150) {
-        height = 0;
-        if (height != _latestCourseView.bounds.size.height) {
-            [UIView animateWithDuration:0.7 animations:^{
-                [_tableView beginUpdates];
-                [_tableView setSectionHeaderHeight:height];
-                [_tableView endUpdates];
-            }];
-        }
-    }
-    else {
-        height = [EVCourseView defaultHeight];
-        // Do not use UIView animation block here because there is a strange bug
-        if (height != _latestCourseView.bounds.size.height) {
-            [_tableView beginUpdates];
-            [_tableView setSectionHeaderHeight:height];
-            [_tableView endUpdates];
-        }
-    }
 }
 
 @end

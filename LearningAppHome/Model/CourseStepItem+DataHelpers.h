@@ -10,7 +10,7 @@
 
 @interface CourseStepItem (DataHelpers)
 
-@property (strong, nonatomic, readonly) NSString *hiraganaWord;
+@property (retain, nonatomic, readonly) NSString *hiraganaWord;
 
 - (NSString *)transliterationForKey:(NSString *)key;
 

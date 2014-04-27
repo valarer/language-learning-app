@@ -12,6 +12,6 @@
 
 @interface EVModelHelper : NSObject
 
-@property (weak, nonatomic) id<EVModelHelperDelegate> delegate;
+@property (assign, nonatomic) id<EVModelHelperDelegate> delegate;
 
 @end

@@ -13,24 +13,20 @@
 - (void)fetchItemsForCourseWithId:(int)identifier {
     NSString *stringPath = [NSString stringWithFormat:URL_ITEMS_FOR_GOAL, identifier];
     
-    __weak typeof(self) weakSelf = self;
     [[RKObjectManager sharedManager] getObjectsAtPath:stringPath
                                            parameters:nil
                                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                                  __strong typeof(weakSelf) strongSelf = weakSelf;
-                                                  if ([strongSelf.delegate respondsToSelector:@selector(didFetchObject:forEntity:)])
+                                                  if ([self.delegate respondsToSelector:@selector(didFetchObject:forEntity:)])
                                                   {
-                                                      [strongSelf.delegate didFetchObjects:mappingResult.array forEntity:[CourseStepItem name]];
+                                                      [self.delegate didFetchObjects:mappingResult.array forEntity:[CourseStepItem name]];
                                                   }
                                               } failure:^(RKObjectRequestOperation *operation, NSError *error) {
                                                   
                                                   NSLog(@"ERROR: Failed to load Items");
                                                   
-                                                  __strong typeof(weakSelf) strongSelf = weakSelf;
-                                                  
-                                                  if ([strongSelf.delegate respondsToSelector:@selector(didFetchFailForEntity:error:)])
+                                                  if ([self.delegate respondsToSelector:@selector(didFetchFailForEntity:error:)])
                                                   {
-                                                      [strongSelf.delegate didFetchFailForEntity:[CourseStepItem name] error:error];
+                                                      [self.delegate didFetchFailForEntity:[CourseStepItem name] error:error];
                                                   }
                                               }];
 }
